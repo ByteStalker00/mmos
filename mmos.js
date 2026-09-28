@@ -125,6 +125,8 @@
       var chips = document.getElementById('chatChips');
       var form = document.getElementById('chatForm');
       var input = document.getElementById('chatInput');
+      var wa = document.getElementById('chatWa');
+      var WA_BASE = 'https://wa.me/393755236202?text=';
       if (!fab || !panel) return;
       var KB = [
         { k: ['dove', 'zona', 'zone', 'san benedetto', 'porto', 'ascoli', 'domicilio', 'raggiung', 'venite', 'sede'],
@@ -147,8 +149,10 @@
           a: 'Primo avvio e installazione programmi €34 con test finale.' },
         { k: ['usato', 'seconda mano', 'ricondizionat'],
           a: 'La sezione <a href="#usato">Usato</a> arriva a breve: pezzi testati, acquisto con contatto diretto col venditore.' },
+        { k: ['whatsapp'],
+          a: 'Tocca il tasto verde qui sotto: si apre WhatsApp al 375 523 6202 con la tua domanda già scritta.' },
         { k: ['facebook', 'contatto', 'contatti', 'telefono', 'chiamare', 'chiamata', 'scrivere', 'parlare', 'prenotare', 'appuntamento'],
-          a: 'Scrivimi su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a> o <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">Discord</a>: diagnosi e preventivo senza impegno.' },
+          a: 'Scrivimi su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a>, <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">Discord</a> o <a href="https://wa.me/393755236202" target="_blank" rel="noopener">WhatsApp</a>: diagnosi e preventivo senza impegno.' },
         { k: ['discord', 'server', 'community'],
           a: 'Il server è qui: <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">MMOS • Assistenza Privata su Discord</a>.' },
         { k: ['github', 'codice', 'repository', 'progett'],
@@ -189,6 +193,7 @@
       function ask(q) {
         if (!q) return;
         add(q, 'user', false);
+        if (wa) wa.href = WA_BASE + encodeURIComponent('Ciao MMOS! ' + q);
         var t = document.createElement('div');
         t.className = 'msg bot typing';
         t.innerHTML = '<i></i><i></i><i></i>';
