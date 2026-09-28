@@ -58,6 +58,7 @@
     .wrap { max-width:880px; margin:0 auto; padding:0 20px 56px; }
     /* nav */
     nav { display:flex; align-items:center; justify-content:space-between; gap:10px;
+      flex-wrap:wrap; row-gap:8px;
       padding:12px 10px; border-bottom:1px solid var(--line);
       position:sticky; top:0; z-index:10; background:var(--navbg);
       backdrop-filter:blur(8px); }
@@ -93,7 +94,7 @@
     #fxBtn .icon-pause { display:none; }
     #fxBtn.on .icon-pause { display:block; }
     #fxBtn.on .icon-play { display:none; }
-    @media(min-width:820px){ .nav-links { display:flex; } }
+    @media(min-width:1024px){ .nav-links { display:flex; } }
     .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line); }
     /* terminal */
     .term { margin:30px auto 0; max-width:100%; background:#0e0d0c; color:#f1ecec;
@@ -111,7 +112,7 @@
     .term pre { margin:0; padding:14px 16px; line-height:1.9; white-space:pre-wrap; }
     .term .p { color:#8fd18f; }
     /* sections */
-    section { padding-top:44px; }
+    section { padding-top:44px; scroll-margin-top:70px; }
     .kicker { font-family:var(--mono); font-size:13px; color:var(--muted); margin:0 0 6px; }
     h2 { font-size:26px; margin:0 0 6px; letter-spacing:-.01em; color:var(--ink); }
     .sec-sub { color:var(--muted); font-size:14.5px; margin:0 0 16px; }
@@ -184,6 +185,7 @@
         <a href="#guide">Guide</a>
         <a href="#build">Build</a>
         <a href="#listino">Listino</a>
+        <a href="#usato">Usato</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-btns">
@@ -288,8 +290,19 @@
       </div>
     </section>
 
+    <section id="usato">
+      <p class="kicker">[ 06 — usato ]</p>
+      <h2>Hardware usato garantito</h2>
+      <p class="sec-sub">In arrivo: pezzi testati da MMOS, acquisto con contatto diretto col venditore.</p>
+      <div class="grid cols3">
+        <div class="tile"><span class="n">[*]</span><b>Come funziona</b><p>Ogni pezzo viene testato e garantito. Compri contattando direttamente il venditore, senza intermediari.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Cosa troverai</b><p>GPU, CPU, RAM, SSD e PC completi ricondizionati, con stato reale dichiarato.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Disponibilità</b><p>La lista arriva qui a breve: scrivimi su Facebook o Discord per sapere cosa c'è ora.</p></div>
+      </div>
+    </section>
+
     <section id="faq">
-      <p class="kicker">[ 06 — faq ]</p>
+      <p class="kicker">[ 07 — faq ]</p>
       <h2>Domande frequenti</h2>
       <div class="grid" style="margin-top:14px;">
         <details class="tile"><summary>In quali zone operate?</summary><p>Solo Porto d'Ascoli e San Benedetto del Tronto per studio e domicilio; da remoto ovunque, ma solo ottimizzazione e debug.</p></details>
@@ -309,6 +322,7 @@
         <a href="#guide">Guide</a>
         <a href="#build">Build</a>
         <a href="#listino">Listino</a>
+        <a href="#usato">Usato</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="foot-social">
