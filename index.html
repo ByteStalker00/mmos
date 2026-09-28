@@ -129,6 +129,14 @@
     .tag { display:inline-block; font-family:var(--mono); font-size:11.5px; font-weight:700;
       color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin:8px 0 2px; }
     .tag.red { background:var(--red); } .tag.green { background:#146636; }
+    .price-wrap { overflow-x:auto; }
+    .price-table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:480px; }
+    .price-table th { font-family:var(--mono); font-size:12px; color:var(--muted);
+      text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+    .price-table td { padding:9px 10px; border-bottom:1px solid var(--line);
+      color:var(--body); vertical-align:top; }
+    .price-table tr:last-child td { border-bottom:none; }
+    .price-table .num { font-family:var(--mono); white-space:nowrap; text-align:right; color:var(--ink); }
     details.tile summary { cursor:pointer; font-weight:700; font-size:15px; }
     details.tile p { margin-top:8px; }
     footer { margin-top:20px; border-top:1px solid var(--line); }
@@ -175,6 +183,7 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#guide">Guide</a>
         <a href="#build">Build</a>
+        <a href="#listino">Listino</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-btns">
@@ -253,8 +262,29 @@
       <p class="sec-sub">Compatibilità verificata al 100%: socket AM5 su tutto, DDR5-6000 sweet spot AM5, PSU con ~40% di margine, B650 con Flashback per Ryzen 9000, triple-fan solo in case con clearance 340mm+.</p>
     </section>
 
+    <section id="listino">
+      <p class="kicker">[ 05 — listino ]</p>
+      <h2>Listino di riferimento</h2>
+      <p class="sec-sub">Build top di gamma 4K/8K · prezzi di riferimento da confermare a preventivo.</p>
+      <div class="tile price-wrap">
+        <table class="price-table">
+          <tr><th>Voce</th><th>Qtà</th><th style="text-align:right;">Prezzo rif.</th></tr>
+          <tr><td>Scheda madre MSI MPG X870E Edge TI WiFi AM5 DDR5</td><td class="num">1</td><td class="num">€ 464,45</td></tr>
+          <tr><td>CPU AMD Ryzen 9 9950X3D 16-core AM5</td><td class="num">1</td><td class="num">€ 907,18</td></tr>
+          <tr><td>RAM Kingston FURY Renegade RGB 32GB DDR5-7200 CL38 (kit 2×16)</td><td class="num">2 kit</td><td class="num">€ 266,59 *</td></tr>
+          <tr><td>Case MSI MAG Pano M100R White</td><td class="num">1</td><td class="num">€ 114,14</td></tr>
+          <tr><td>GPU MSI RTX 5090 Ventus 3X OC 32GB GDDR7</td><td class="num">1</td><td class="num">€ 2.779,00</td></tr>
+          <tr><td>SSD Samsung 9100 PRO 1TB NVMe PCIe 5.0</td><td class="num">2</td><td class="num">€ 214,48 *</td></tr>
+          <tr><td>Dissipatore MSI MAG CoreLiquid I360 White</td><td class="num">1</td><td class="num">€ 157,00</td></tr>
+          <tr><td>Alimentatore Corsair RM1200x Shift 1200W 80+ Gold</td><td class="num">1</td><td class="num">su richiesta</td></tr>
+          <tr><td>Servizio assemblaggio MMOS (cable management, OS, driver, test finali)</td><td class="num">1</td><td class="num">€ 125,34</td></tr>
+        </table>
+      </div>
+      <p class="sec-sub">* prezzi e disponibilità da confermare in fase di preventivo personalizzato.</p>
+    </section>
+
     <section id="faq">
-      <p class="kicker">[ 05 — faq ]</p>
+      <p class="kicker">[ 06 — faq ]</p>
       <h2>Domande frequenti</h2>
       <div class="grid" style="margin-top:14px;">
         <details class="tile"><summary>In quali zone operate?</summary><p>Solo Porto d'Ascoli e San Benedetto del Tronto per studio e domicilio; da remoto ovunque, ma solo ottimizzazione e debug.</p></details>
@@ -273,9 +303,9 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#guide">Guide</a>
         <a href="#build">Build</a>
+        <a href="#listino">Listino</a>
         <a href="#faq">FAQ</a>
       </div>
-      <div class="foot-social">
         <a class="soc" href="https://discord.gg/v6fb4zrPfK" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.319 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 00-.042-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.009c.12.099.246.198.373.292a.077.077 0 01-.006.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.211 0 2.176 1.095 2.157 2.419 0 1.333-.956 2.419-2.157 2.419zm7.975 0c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.095 2.157 2.419 0 1.333-.946 2.419-2.157 2.419z"/></svg></a>
         <a class="soc" href="https://www.facebook.com/profile.php?id=61594506196534" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
         <a class="soc" href="https://github.com/ByteStalker00" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
