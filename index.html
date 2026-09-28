@@ -33,6 +33,8 @@
       --line:#38322a; --navy:#3d4a7a; --red:#c92a30; --fb:#1877f2;
       --lede:#cfc9bc; --body:#c9c4b8; --navbg:rgba(22,19,16,.93);
       --dot:rgba(255,255,255,.055); --glow1:rgba(210,31,38,.13); --glow2:rgba(61,74,122,.22);
+      --tg:#4cc978; --tg-bd:rgba(76,201,120,.45); --tg-bg:rgba(76,201,120,.1);
+      --tr:#ff7a7f; --tr-bd:rgba(255,122,127,.45); --tr-bg:rgba(255,122,127,.1);
       --m-red:#e5484d; --m-navy:#8fa3e8;
       --term-border:#4a4438; --term-shadow:0 10px 34px rgba(0,0,0,.4);
       --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -42,6 +44,8 @@
       --line:#e3ded2; --navy:#1b2340; --red:#d21f26;
       --lede:#3d3a34; --body:#4a463f; --navbg:rgba(244,241,234,.93);
       --dot:rgba(28,26,23,.3); --glow1:rgba(210,31,38,.07); --glow2:rgba(27,35,64,.09);
+      --tg:#146636; --tg-bd:rgba(20,102,54,.4); --tg-bg:rgba(20,102,54,.08);
+      --tr:#c92a30; --tr-bd:rgba(201,42,48,.4); --tr-bg:rgba(201,42,48,.08);
       --m-red:#d21f26; --m-navy:#1b2340;
       --term-border:#d5cfbe; --term-shadow:0 10px 28px rgba(28,26,23,.12);
     }
@@ -136,9 +140,11 @@
     .tile b { display:block; margin:6px 0; font-size:15.5px; color:var(--ink); }
     .tile p, .tile li { font-size:14px; color:var(--body); line-height:1.6; margin:0; }
     .tile ul { margin:8px 0 0; padding-left:18px; }
-    .tag { display:inline-block; font-family:var(--mono); font-size:11.5px; font-weight:700;
-      color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin:8px 0 2px; }
-    .tag.red { background:var(--red); } .tag.green { background:#146636; }
+    .tag { display:inline-block; font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:.06em; text-transform:uppercase; padding:4px 11px; margin:8px 0 2px;
+      border-radius:20px; border:1px solid var(--muted); color:var(--muted); background:transparent; }
+    .tag.red { color:var(--tr); border-color:var(--tr-bd); background:var(--tr-bg); }
+    .tag.green { color:var(--tg); border-color:var(--tg-bd); background:var(--tg-bg); }
     .price-wrap { overflow-x:auto; }
     .price-table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:480px; }
     .price-table th { font-family:var(--mono); font-size:12px; color:var(--muted);
