@@ -28,8 +28,8 @@
   <link rel="canonical" href="https://www.facebook.com/profile.php?id=61594506196534">
   <style>
     :root {
-      --paper:#f4f1ea; --card:#fbfaf7; --ink:#1c1a17; --muted:#6f6a60;
-      --line:#e3ded2; --navy:#1b2340; --red:#d21f26; --fb:#1877f2;
+      --paper:#161310; --card:#221e19; --ink:#f1ecec; --muted:#a8a29a;
+      --line:#38322a; --navy:#3d4a7a; --red:#e5484d; --fb:#1877f2;
       --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     }
     * { box-sizing:border-box; }
@@ -51,7 +51,7 @@
       padding:22px 30px; margin:22px auto; max-width:380px; }
     .hero-logo img { width:100%; height:auto; display:block; }
     h1 { font-size:clamp(32px,5.5vw,52px); margin:0 0 12px; letter-spacing:-.02em; }
-    .lede { font-size:17px; line-height:1.65; color:#3d3a34; max-width:640px; margin:0 auto 24px; }
+    .lede { font-size:17px; line-height:1.65; color:#cfc9bc; max-width:640px; margin:0 auto 24px; }
     .cta-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
     .btn { display:inline-flex; align-items:center; gap:8px; background:var(--fb);
       color:#fff; text-decoration:none; font-weight:600; padding:10px 20px;
@@ -59,8 +59,8 @@
     .btn svg { width:17px; height:17px; fill:#fff; }
     .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line); }
     /* terminal */
-    .term { margin:30px auto 0; max-width:620px; background:#211e1e; color:#f1ecec;
-      border-radius:12px; overflow:hidden; text-align:left;
+    .term { margin:30px auto 0; max-width:620px; background:#0e0d0c; color:#f1ecec;
+      border:1px solid var(--line); border-radius:12px; overflow:hidden; text-align:left;
       font-family:var(--mono); font-size:13.5px; }
     .term-bar { display:flex; gap:6px; padding:10px 14px; border-bottom:1px solid #3a3636; }
     .dot { width:10px; height:10px; border-radius:50%; background:#5a5555; }
@@ -69,15 +69,15 @@
     /* sections */
     section { padding-top:44px; }
     .kicker { font-family:var(--mono); font-size:13px; color:var(--muted); margin:0 0 6px; }
-    h2 { font-size:26px; margin:0 0 6px; letter-spacing:-.01em; }
+    h2 { font-size:26px; margin:0 0 6px; letter-spacing:-.01em; color:var(--ink); }
     .sec-sub { color:var(--muted); font-size:14.5px; margin:0 0 16px; }
     .grid { display:grid; grid-template-columns:1fr; gap:12px; }
     @media(min-width:640px){ .grid.cols3{ grid-template-columns:1fr 1fr 1fr; }
       .grid.cols2{ grid-template-columns:1fr 1fr; } }
     .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 16px; }
     .tile .n { font-family:var(--mono); font-size:12px; color:var(--muted); }
-    .tile b { display:block; margin:6px 0; font-size:15.5px; }
-    .tile p, .tile li { font-size:14px; color:#4a463f; line-height:1.6; margin:0; }
+    .tile b { display:block; margin:6px 0; font-size:15.5px; color:var(--ink); }
+    .tile p, .tile li { font-size:14px; color:#c9c4b8; line-height:1.6; margin:0; }
     .tile ul { margin:8px 0 0; padding-left:18px; }
     .tag { display:inline-block; font-family:var(--mono); font-size:11.5px; font-weight:700;
       color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin:8px 0 2px; }
