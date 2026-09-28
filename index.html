@@ -157,6 +157,12 @@
     .soc:hover { transform:translateY(-2px); }
     .soc svg { width:11px; height:11px; fill:var(--ink); }
     .copy { font-size:10px; }
+    .deny { position:fixed; left:50%; bottom:24px; z-index:60;
+      transform:translateX(-50%) translateY(12px); opacity:0; pointer-events:none;
+      background:#c92a30; color:#fff; font-family:var(--mono); font-size:13px; font-weight:700;
+      padding:10px 18px; border-radius:10px; border:1px solid #8f1419;
+      box-shadow:var(--term-shadow); transition:opacity .2s ease, transform .2s ease; }
+    .deny.show { opacity:1; transform:translateX(-50%) translateY(0); }
     .chat-fab { position:fixed; right:16px; bottom:16px; z-index:42; width:48px; height:48px;
       border-radius:50%; background:var(--red); border:1px solid rgba(0,0,0,.2);
       cursor:pointer; display:flex; align-items:center; justify-content:center;

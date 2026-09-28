@@ -99,7 +99,24 @@
       resize(); start();
     })();
     (function () {
-      var fab = document.getElementById('chatFab');
+      var t = null, el = null;
+      function toast() {
+        if (!el) {
+          el = document.createElement('div');
+          el.className = 'deny';
+          el.setAttribute('role', 'alert');
+          el.textContent = 'Azione non consentita!';
+          document.body.appendChild(el);
+        }
+        el.classList.add('show');
+        if (t) clearTimeout(t);
+        t = setTimeout(function () { el.classList.remove('show'); }, 1800);
+      }
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        toast();
+      });
+    })();
       var panel = document.getElementById('chatPanel');
       var close = document.getElementById('chatClose');
       var log = document.getElementById('chatLog');
