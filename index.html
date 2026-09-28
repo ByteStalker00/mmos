@@ -26,43 +26,81 @@
 
   <link rel="canonical" href="https://www.facebook.com/profile.php?id=61594506196534">
   <style>
-    :root { --red:#d21f26; --navy:#1b2340; --dark:#222; --bg:#f4f5f7; --card:#fff; }
+    :root { --red:#d21f26; --navy:#1b2340; --fb:#1877f2; --dark:#222; --bg:#f4f5f7; --card:#fff; --muted:#666; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:#333; }
-    .wrap { max-width:720px; margin:0 auto; padding:32px 16px 48px; }
-    .card { background:var(--card); border-radius:16px; padding:32px 24px; box-shadow:0 4px 24px rgba(0,0,0,.08); text-align:center; }
-    .logo { max-width:340px; width:85%; height:auto; }
+    .wrap { max-width:860px; margin:0 auto; padding:32px 16px 48px; }
+    .card { background:var(--card); border-radius:16px; padding:32px 24px; box-shadow:0 4px 24px rgba(0,0,0,.08); }
+    .hero { text-align:center; }
+    .logo { max-width:300px; width:75%; height:auto; }
     h1 { margin:16px 0 4px; font-size:28px; color:var(--dark); }
-    .sub { color:#666; margin:0 0 16px; font-size:15px; }
-    .bio { max-width:600px; margin:0 auto 24px; line-height:1.6; font-size:16px; }
-    .grid { display:grid; grid-template-columns:1fr; gap:12px; margin:0 0 24px; }
-    @media(min-width:600px){ .grid{ grid-template-columns:1fr 1fr 1fr; } }
-    .svc { background:#fafafa; border:1px solid #eee; border-radius:12px; padding:16px 12px; }
-    .svc b { display:block; margin-bottom:6px; color:var(--navy); }
-    .svc span { font-size:14px; color:#555; line-height:1.5; }
-    .btn { display:inline-flex; align-items:center; gap:10px; background:#1877f2; color:#fff; text-decoration:none; font-weight:bold; padding:14px 28px; border-radius:10px; font-size:17px; }
+    .sub { color:var(--muted); margin:0 0 16px; font-size:15px; }
+    .bio { max-width:640px; margin:0 auto 20px; line-height:1.6; font-size:16px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; background:var(--fb); color:#fff; text-decoration:none; font-weight:bold; padding:10px 20px; border-radius:9px; font-size:15px; }
     .btn:hover { filter:brightness(.92); }
-    .btn svg { width:20px; height:20px; fill:#fff; }
-    .note { margin-top:14px; font-size:13px; color:#888; }
-    footer { text-align:center; margin-top:20px; font-size:13px; color:#999; }
+    .btn svg { width:17px; height:17px; fill:#fff; }
+    h2 { font-size:21px; color:var(--navy); margin:34px 0 4px; }
+    .sec-sub { color:var(--muted); font-size:14px; margin:0 0 14px; }
+    .grid { display:grid; grid-template-columns:1fr; gap:12px; }
+    @media(min-width:620px){ .grid.cols3{ grid-template-columns:1fr 1fr 1fr; } .grid.cols2{ grid-template-columns:1fr 1fr; } }
+    .tile { background:#fafafa; border:1px solid #eee; border-radius:12px; padding:16px 14px; }
+    .tile b { display:block; margin-bottom:6px; color:var(--navy); font-size:15px; }
+    .tile p, .tile li { font-size:14px; color:#555; line-height:1.55; margin:0; }
+    .tile ul { margin:6px 0 0; padding-left:18px; }
+    .tag { display:inline-block; font-size:12px; font-weight:bold; color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin-bottom:8px; }
+    .tag.red { background:var(--red); }
+    .tag.green { background:#1e9e50; }
+    footer { text-align:center; margin-top:22px; font-size:13px; color:#999; }
+    footer a { color:var(--fb); }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
+    <div class="card hero">
       <img class="logo" src="./logo-cropped.png" alt="MMOS - Assistenza Privata" width="764" height="250" fetchpriority="high">
       <h1>MMOS • Assistenza Privata</h1>
       <p class="sub">Formattazione e ottimizzazione PC</p>
       <p class="bio">Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.</p>
-      <div class="grid">
-        <div class="svc"><b>In studio</b><span>Formattazione e ottimizzazione complete</span></div>
-        <div class="svc"><b>A domicilio</b><span>Solo Porto d'Ascoli e San Benedetto del Tronto</span></div>
-        <div class="svc"><b>Da remoto</b><span>Unicamente ottimizzazione e debug</span></div>
-      </div>
-      <a class="btn" href="https://www.facebook.com/profile.php?id=61594506196534"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Vai alla pagina Facebook</a>
-      <p class="note">Verrai reindirizzato alla pagina ufficiale MMOS su Facebook.</p>
+      <a class="btn" href="https://www.facebook.com/profile.php?id=61594506196534"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Pagina Facebook</a>
     </div>
-    <footer>MMOS • Assistenza Privata</footer>
+
+    <div class="card" style="margin-top:16px;">
+      <h2 style="margin-top:0;">Servizi</h2>
+      <p class="sec-sub">Dove e come intervengo.</p>
+      <div class="grid cols3">
+        <div class="tile"><span class="tag">Studio</span><b>Formattazione completa</b><p>Backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
+        <div class="tile"><span class="tag red">Domicilio</span><b>Porto d'Ascoli e SBT</b><p>Interventi a casa o in ufficio, solo nella zona di Porto d'Ascoli e San Benedetto del Tronto.</p></div>
+        <div class="tile"><span class="tag green">Remoto</span><b>Ottimizzazione e debug</b><p>Da remoto solo interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
+      </div>
+
+      <h2>Portfolio — esempi di intervento</h2>
+      <p class="sec-sub">Lavori tipici che eseguo.</p>
+      <div class="grid cols2">
+        <div class="tile"><b>Pulizia e formattazione</b><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
+        <div class="tile"><b>Upgrade SSD e RAM</b><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
+        <div class="tile"><b>Rimozione malware</b><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
+        <div class="tile"><b>Ottimizzazione avvio</b><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
+      </div>
+
+      <h2>Guide e consigli</h2>
+      <p class="sec-sub">Buone pratiche per tenere il PC in forma.</p>
+      <div class="grid cols2">
+        <div class="tile"><b>Backup prima di tutto</b><ul><li>Copia documenti e foto su disco esterno o cloud.</li><li>Verifica che il backup si apra davvero.</li><li>Mai formattare senza backup verificato.</li></ul></div>
+        <div class="tile"><b>PC lento all'avvio?</b><ul><li>Disattiva i programmi inutili all'avvio.</li><li>Disinstalla ciò che non usi.</li><li>Un SSD cambia più di qualsiasi pulizia.</li></ul></div>
+        <div class="tile"><b>Surriscaldamento</b><ul><li>Pulisci ventole e prese d'aria dalla polvere.</li><li>Usa il portatile su superfici rigide.</li><li>Se si spegne da solo, non insistere: serve assistenza.</li></ul></div>
+        <div class="tile"><b>Sicurezza base</b><ul><li>Aggiorna sistema e browser.</li><li>Non aprire allegati sospetti.</li><li>Password diverse per gli account importanti.</li></ul></div>
+      </div>
+
+      <h2>Build — configurazioni di esempio</h2>
+      <p class="sec-sub">Esempi indicativi: ogni build è su preventivo personalizzato.</p>
+      <div class="grid cols3">
+        <div class="tile"><span class="tag green">Ufficio / Studio</span><b>Essenziale e silenzioso</b><ul><li>CPU 6 core recente</li><li>16 GB RAM</li><li>SSD NVMe 500 GB–1 TB</li></ul></div>
+        <div class="tile"><span class="tag red">Gaming 1080p</span><b>Fluidità senza sprechi</b><ul><li>CPU 6–8 core</li><li>16–32 GB RAM</li><li>SSD NVMe 1 TB + GPU fascia media</li></ul></div>
+        <div class="tile"><span class="tag">Workstation</span><b>Carichi pesanti</b><ul><li>CPU 8+ core</li><li>32 GB RAM o più</li><li>Doppio SSD + backup dedicato</li></ul></div>
+      </div>
+    </div>
+
+    <footer>MMOS • Assistenza Privata — <a href="https://www.facebook.com/profile.php?id=61594506196534">Facebook</a></footer>
   </div>
 </body>
 </html>
