@@ -116,6 +116,22 @@
         e.preventDefault();
         toast();
       });
+      window.mmosDeny = toast;
+    })();
+    (function () {
+      function blocked(e) {
+        if (e.key === 'F12') return true;
+        var k = (e.key || '').toUpperCase();
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (k === 'I' || k === 'J' || k === 'C')) return true;
+        if ((e.ctrlKey || e.metaKey) && k === 'U') return true;
+        return false;
+      }
+      document.addEventListener('keydown', function (e) {
+        if (blocked(e)) {
+          e.preventDefault();
+          if (window.mmosDeny) window.mmosDeny();
+        }
+      });
     })();
     (function () {
       var fab = document.getElementById('chatFab');
