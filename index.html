@@ -27,81 +27,155 @@
 
   <link rel="canonical" href="https://www.facebook.com/profile.php?id=61594506196534">
   <style>
-    :root { --red:#d21f26; --navy:#1b2340; --fb:#1877f2; --dark:#222; --bg:#f4f5f7; --card:#fff; --muted:#666; }
+    :root {
+      --paper:#f4f1ea; --card:#fbfaf7; --ink:#1c1a17; --muted:#6f6a60;
+      --line:#e3ded2; --navy:#1b2340; --red:#d21f26; --fb:#1877f2;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:#333; }
-    .wrap { max-width:860px; margin:0 auto; padding:32px 16px 48px; }
-    .card { background:var(--card); border-radius:16px; padding:32px 24px; box-shadow:0 4px 24px rgba(0,0,0,.08); }
-    .hero { text-align:center; }
-    .logo { max-width:300px; width:75%; height:auto; }
-    h1 { margin:16px 0 4px; font-size:28px; color:var(--dark); }
-    .sub { color:var(--muted); margin:0 0 16px; font-size:15px; }
-    .bio { max-width:640px; margin:0 auto 20px; line-height:1.6; font-size:16px; }
-    .btn { display:inline-flex; align-items:center; gap:8px; background:var(--fb); color:#fff; text-decoration:none; font-weight:bold; padding:10px 20px; border-radius:9px; font-size:15px; }
-    .btn:hover { filter:brightness(.92); }
+    body { margin:0; background:var(--paper); color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+    .wrap { max-width:880px; margin:0 auto; padding:0 20px 56px; }
+    /* nav */
+    nav { display:flex; align-items:center; justify-content:space-between;
+      padding:18px 0; border-bottom:1px solid var(--line); }
+    nav img { height:30px; width:auto; background:#fff; border:1px solid var(--line);
+      border-radius:8px; padding:3px 8px; }
+    nav a.docs { font-family:var(--mono); font-size:13px; color:var(--ink);
+      text-decoration:none; border:1px solid var(--line); border-radius:8px;
+      padding:7px 14px; background:var(--card); }
+    /* hero */
+    .hero { text-align:center; padding:56px 0 8px; }
+    .eyebrow { font-family:var(--mono); font-size:13px; color:var(--muted); }
+    .hero-logo { background:#fff; border:1px solid var(--line); border-radius:16px;
+      padding:22px 30px; margin:22px auto; max-width:380px; }
+    .hero-logo img { width:100%; height:auto; display:block; }
+    h1 { font-size:clamp(32px,5.5vw,52px); margin:0 0 12px; letter-spacing:-.02em; }
+    .lede { font-size:17px; line-height:1.65; color:#3d3a34; max-width:640px; margin:0 auto 24px; }
+    .cta-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:8px; background:var(--fb);
+      color:#fff; text-decoration:none; font-weight:600; padding:10px 20px;
+      border-radius:9px; font-size:15px; border:1px solid #1463cc; }
     .btn svg { width:17px; height:17px; fill:#fff; }
-    h2 { font-size:21px; color:var(--navy); margin:34px 0 4px; }
-    .sec-sub { color:var(--muted); font-size:14px; margin:0 0 14px; }
+    .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+    /* terminal */
+    .term { margin:30px auto 0; max-width:620px; background:#211e1e; color:#f1ecec;
+      border-radius:12px; overflow:hidden; text-align:left;
+      font-family:var(--mono); font-size:13.5px; }
+    .term-bar { display:flex; gap:6px; padding:10px 14px; border-bottom:1px solid #3a3636; }
+    .dot { width:10px; height:10px; border-radius:50%; background:#5a5555; }
+    .term pre { margin:0; padding:14px 16px; line-height:1.9; white-space:pre-wrap; }
+    .term .p { color:#8fd18f; }
+    /* sections */
+    section { padding-top:44px; }
+    .kicker { font-family:var(--mono); font-size:13px; color:var(--muted); margin:0 0 6px; }
+    h2 { font-size:26px; margin:0 0 6px; letter-spacing:-.01em; }
+    .sec-sub { color:var(--muted); font-size:14.5px; margin:0 0 16px; }
     .grid { display:grid; grid-template-columns:1fr; gap:12px; }
-    @media(min-width:620px){ .grid.cols3{ grid-template-columns:1fr 1fr 1fr; } .grid.cols2{ grid-template-columns:1fr 1fr; } }
-    .tile { background:#fafafa; border:1px solid #eee; border-radius:12px; padding:16px 14px; }
-    .tile b { display:block; margin-bottom:6px; color:var(--navy); font-size:15px; }
-    .tile p, .tile li { font-size:14px; color:#555; line-height:1.55; margin:0; }
-    .tile ul { margin:6px 0 0; padding-left:18px; }
-    .tag { display:inline-block; font-size:12px; font-weight:bold; color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin-bottom:8px; }
-    .tag.red { background:var(--red); }
-    .tag.green { background:#1e9e50; }
-    footer { text-align:center; margin-top:22px; font-size:13px; color:#999; }
-    footer a { color:var(--fb); }
+    @media(min-width:640px){ .grid.cols3{ grid-template-columns:1fr 1fr 1fr; }
+      .grid.cols2{ grid-template-columns:1fr 1fr; } }
+    .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 16px; }
+    .tile .n { font-family:var(--mono); font-size:12px; color:var(--muted); }
+    .tile b { display:block; margin:6px 0; font-size:15.5px; }
+    .tile p, .tile li { font-size:14px; color:#4a463f; line-height:1.6; margin:0; }
+    .tile ul { margin:8px 0 0; padding-left:18px; }
+    .tag { display:inline-block; font-family:var(--mono); font-size:11.5px; font-weight:700;
+      color:#fff; background:var(--navy); border-radius:20px; padding:3px 10px; margin:8px 0 2px; }
+    .tag.red { background:var(--red); } .tag.green { background:#1e9e50; }
+    details.tile summary { cursor:pointer; font-weight:700; font-size:15px; }
+    details.tile p { margin-top:8px; }
+    footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+      font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+    footer a { color:var(--ink); }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card hero">
-      <img class="logo" src="./logo-cropped.png" alt="MMOS - Assistenza Privata" width="764" height="250" fetchpriority="high">
+    <nav>
+      <img src="./logo-cropped.png" alt="MMOS" width="152" height="50">
+      <a class="docs" href="https://www.facebook.com/profile.php?id=61594506196534">Facebook ↗</a>
+    </nav>
+
+    <div class="hero">
+      <p class="eyebrow">[ assistenza privata — porto d'ascoli · san benedetto del tronto ]</p>
+      <div class="hero-logo">
+        <img src="./logo-cropped.png" alt="MMOS - Assistenza Privata" width="764" height="250" fetchpriority="high">
+      </div>
       <h1>MMOS • Assistenza Privata</h1>
-      <p class="sub">Formattazione e ottimizzazione PC</p>
-      <p class="bio">Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.</p>
-      <a class="btn" href="https://www.facebook.com/profile.php?id=61594506196534"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Pagina Facebook</a>
+      <p class="lede">Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61594506196534"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Pagina Facebook</a>
+        <a class="btn ghost" href="#servizi">Vedi i servizi</a>
+      </div>
+      <div class="term" aria-hidden="true">
+        <div class="term-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<pre><span class="p">$</span> diagnosi del problema
+<span class="p">$</span> preventivo chiaro, senza sorprese
+<span class="p">$</span> intervento in studio, a domicilio o da remoto</pre>
+      </div>
     </div>
 
-    <div class="card" style="margin-top:16px;">
-      <h2 style="margin-top:0;">Servizi</h2>
-      <p class="sec-sub">Dove e come intervengo.</p>
+    <section id="servizi">
+      <p class="kicker">[ 01 — servizi ]</p>
+      <h2>Dove e come intervengo</h2>
       <div class="grid cols3">
-        <div class="tile"><span class="tag">Studio</span><b>Formattazione completa</b><p>Backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
-        <div class="tile"><span class="tag red">Domicilio</span><b>Porto d'Ascoli e SBT</b><p>Interventi a casa o in ufficio, solo nella zona di Porto d'Ascoli e San Benedetto del Tronto.</p></div>
-        <div class="tile"><span class="tag green">Remoto</span><b>Ottimizzazione e debug</b><p>Da remoto solo interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>In studio</b><p>Formattazione completa: backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>A domicilio</b><p>Interventi a casa o in ufficio, solo a Porto d'Ascoli e San Benedetto del Tronto.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Da remoto</b><p>Unicamente interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
       </div>
+    </section>
 
-      <h2>Portfolio — esempi di intervento</h2>
+    <section>
+      <p class="kicker">[ 02 — portfolio ]</p>
+      <h2>Esempi di intervento</h2>
       <p class="sec-sub">Lavori tipici che eseguo.</p>
       <div class="grid cols2">
-        <div class="tile"><b>Pulizia e formattazione</b><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
-        <div class="tile"><b>Upgrade SSD e RAM</b><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
-        <div class="tile"><b>Rimozione malware</b><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
-        <div class="tile"><b>Ottimizzazione avvio</b><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Pulizia e formattazione</b><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Upgrade SSD e RAM</b><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Rimozione malware</b><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
+        <div class="tile"><span class="n">[*]</span><b>Ottimizzazione avvio</b><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
       </div>
+    </section>
 
+    <section>
+      <p class="kicker">[ 03 — guide ]</p>
       <h2>Guide e consigli</h2>
       <p class="sec-sub">Buone pratiche per tenere il PC in forma.</p>
       <div class="grid cols2">
-        <div class="tile"><b>Backup prima di tutto</b><ul><li>Copia documenti e foto su disco esterno o cloud.</li><li>Verifica che il backup si apra davvero.</li><li>Mai formattare senza backup verificato.</li></ul></div>
-        <div class="tile"><b>PC lento all'avvio?</b><ul><li>Disattiva i programmi inutili all'avvio.</li><li>Disinstalla ciò che non usi.</li><li>Un SSD cambia più di qualsiasi pulizia.</li></ul></div>
-        <div class="tile"><b>Surriscaldamento</b><ul><li>Pulisci ventole e prese d'aria dalla polvere.</li><li>Usa il portatile su superfici rigide.</li><li>Se si spegne da solo, non insistere: serve assistenza.</li></ul></div>
-        <div class="tile"><b>Sicurezza base</b><ul><li>Aggiorna sistema e browser.</li><li>Non aprire allegati sospetti.</li><li>Password diverse per gli account importanti.</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><b>Backup prima di tutto</b><ul><li>Copia documenti e foto su disco esterno o cloud.</li><li>Verifica che il backup si apra davvero.</li><li>Mai formattare senza backup verificato.</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><b>PC lento all'avvio?</b><ul><li>Disattiva i programmi inutili all'avvio.</li><li>Disinstalla ciò che non usi.</li><li>Un SSD cambia più di qualsiasi pulizia.</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><b>Surriscaldamento</b><ul><li>Pulisci ventole e prese d'aria dalla polvere.</li><li>Usa il portatile su superfici rigide.</li><li>Se si spegne da solo, serve assistenza.</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><b>Sicurezza base</b><ul><li>Aggiorna sistema e browser.</li><li>Non aprire allegati sospetti.</li><li>Password diverse per gli account importanti.</li></ul></div>
       </div>
+    </section>
 
-      <h2>Build — configurazioni ufficiali AMD + ASUS / MSI</h2>
-      <p class="sec-sub">Lineup settembre 2026, socket AM5 + DDR5. Per ogni pezzo la scelta top tra ASUS e MSI, con alternativa. Preventivo personalizzato.</p>
+    <section>
+      <p class="kicker">[ 04 — build ]</p>
+      <h2>Build AMD + ASUS / MSI</h2>
+      <p class="sec-sub">Lineup settembre 2026, socket AM5 + DDR5. Scelta top tra ASUS e MSI, con alternativa. Preventivo personalizzato.</p>
       <div class="grid cols3">
-        <div class="tile"><span class="tag green">1080p Full HD</span><b>Ryzen 5 + RX 9060 XT</b><ul><li>CPU: AMD Ryzen 5 9600X (6 core, 5,4 GHz)</li><li>Scheda madre: MSI MAG B650M Mortar WiFi (alt. ASUS TUF B650M-Plus)</li><li>GPU: ASUS Dual RX 9060 XT 16GB (MSI non copre questa fascia)</li><li>RAM: 16 GB DDR5-6000 EXPO (2×8)</li><li>SSD: NVMe PCIe 4.0 da 1 TB</li><li>Alimentatore: 650W 80+ Bronze (es. MSI MAG A650BN)</li></ul></div>
-        <div class="tile"><span class="tag green">2K QHD 144 Hz</span><b>Ryzen 7 9800X3D + RX 9070</b><ul><li>CPU: AMD Ryzen 7 9800X3D (8 core, 3D V-Cache)</li><li>Scheda madre: MSI MAG B850 Tomahawk Max WiFi (alt. ASUS TUF B850-Plus)</li><li>GPU: MSI RX 9070 Gaming Trio OC 16GB (alt. ASUS Prime RX 9070)</li><li>RAM: 32 GB DDR5-6000 EXPO (2×16)</li><li>SSD: NVMe PCIe 4.0 da 2 TB</li><li>Alimentatore: 750W 80+ Gold (es. MSI MAG A750GL)</li></ul></div>
-        <div class="tile"><span class="tag red">4K UHD</span><b>Ryzen 7 9800X3D + RX 9070 XT</b><ul><li>CPU: AMD Ryzen 7 9800X3D (8 core, 3D V-Cache)</li><li>Scheda madre: MSI MPG X870E Carbon WiFi (alt. ASUS ROG Strix X870E-E)</li><li>GPU: MSI RX 9070 XT Vanguard SOC 16GB (alt. ASUS TUF RX 9070 XT OC)</li><li>RAM: 32 GB DDR5-6000 EXPO (2×16)</li><li>SSD: NVMe PCIe 5.0 da 2 TB</li><li>Alimentatore: 850W 80+ Gold ATX 3.1 (es. ASUS ROG Strix 850G)</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><span class="tag green">1080p Full HD</span><b>Ryzen 5 + RX 9060 XT</b><ul><li>CPU: AMD Ryzen 5 9600X (6 core, 5,4 GHz)</li><li>Scheda madre: MSI MAG B650M Mortar WiFi (alt. ASUS TUF B650M-Plus)</li><li>GPU: ASUS Dual RX 9060 XT 16GB</li><li>RAM: 16 GB DDR5-6000 EXPO · SSD NVMe 1 TB</li><li>Alimentatore: 650W 80+ Bronze</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><span class="tag green">2K QHD 144 Hz</span><b>Ryzen 7 9800X3D + RX 9070</b><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache)</li><li>Scheda madre: MSI MAG B850 Tomahawk Max WiFi (alt. ASUS TUF B850-Plus)</li><li>GPU: MSI RX 9070 Gaming Trio OC 16GB (alt. ASUS Prime)</li><li>RAM: 32 GB DDR5-6000 EXPO · SSD NVMe 2 TB</li><li>Alimentatore: 750W 80+ Gold</li></ul></div>
+        <div class="tile"><span class="n">[*]</span><span class="tag red">4K UHD</span><b>Ryzen 7 9800X3D + RX 9070 XT</b><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache)</li><li>Scheda madre: MSI MPG X870E Carbon WiFi (alt. ASUS ROG Strix X870E-E)</li><li>GPU: MSI RX 9070 XT Vanguard SOC 16GB (alt. ASUS TUF OC)</li><li>RAM: 32 GB DDR5-6000 EXPO · SSD PCIe 5.0 2 TB</li><li>Alimentatore: 850W 80+ Gold ATX 3.1</li></ul></div>
       </div>
-    </div>
+    </section>
 
-    <footer>MMOS • Assistenza Privata — <a href="https://www.facebook.com/profile.php?id=61594506196534">Facebook</a></footer>
+    <section>
+      <p class="kicker">[ 05 — faq ]</p>
+      <h2>Domande frequenti</h2>
+      <div class="grid" style="margin-top:14px;">
+        <details class="tile"><summary>In quali zone operate?</summary><p>Solo Porto d'Ascoli e San Benedetto del Tronto per studio e domicilio; da remoto ovunque, ma solo ottimizzazione e debug.</p></details>
+        <details class="tile"><summary>Cosa fate da remoto?</summary><p>Unicamente interventi software: pulizia, ottimizzazione avvio, risoluzione errori e rallentamenti. Niente formattazioni a distanza.</p></details>
+        <details class="tile"><summary>Devo fare il backup prima?</summary><p>Sì, sempre. Se non sai come farlo, lo facciamo insieme prima dell'intervento.</p></details>
+        <details class="tile"><summary>Quanto costa una build?</summary><p>Dipende dai componenti e dalla disponibilità: contattami su Facebook per un preventivo personalizzato e senza impegno.</p></details>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 MMOS • Assistenza Privata</span>
+      <span><a href="https://www.facebook.com/profile.php?id=61594506196534">Facebook</a> · <a href="https://github.com/ByteStalker00/mmos-preview">GitHub</a></span>
+    </footer>
   </div>
 </body>
 </html>
