@@ -33,8 +33,7 @@
       --line:#38322a; --navy:#3d4a7a; --red:#c92a30; --fb:#1877f2;
       --lede:#cfc9bc; --body:#c9c4b8; --navbg:rgba(22,19,16,.93);
       --dot:rgba(255,255,255,.055); --glow1:rgba(210,31,38,.13); --glow2:rgba(61,74,122,.22);
-      --tg:#4cc978; --tg-bd:rgba(76,201,120,.45); --tg-bg:rgba(76,201,120,.1);
-      --tr:#ff7a7f; --tr-bd:rgba(255,122,127,.45); --tr-bg:rgba(255,122,127,.1);
+      --tg:#4cc978; --tr:#ff7a7f;
       --m-red:#e5484d; --m-navy:#8fa3e8;
       --term-border:#4a4438; --term-shadow:0 10px 34px rgba(0,0,0,.4);
       --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -44,8 +43,7 @@
       --line:#e3ded2; --navy:#1b2340; --red:#d21f26;
       --lede:#3d3a34; --body:#4a463f; --navbg:rgba(244,241,234,.93);
       --dot:rgba(28,26,23,.3); --glow1:rgba(210,31,38,.07); --glow2:rgba(27,35,64,.09);
-      --tg:#146636; --tg-bd:rgba(20,102,54,.4); --tg-bg:rgba(20,102,54,.08);
-      --tr:#c92a30; --tr-bd:rgba(201,42,48,.4); --tr-bg:rgba(201,42,48,.08);
+      --tg:#146636; --tr:#c92a30;
       --m-red:#d21f26; --m-navy:#1b2340;
       --term-border:#d5cfbe; --term-shadow:0 10px 28px rgba(28,26,23,.12);
     }
@@ -136,15 +134,13 @@
     .tile:hover { transform:translateY(-2px); border-color:#57503f; }
     .tile .n { font-family:var(--mono); font-size:12px; color:var(--muted); }
     .tile .mk { display:inline-block; width:9px; height:9px; border-radius:2px;
-      background:var(--red); margin:3px 0 1px; }
+      background:var(--red); flex:0 0 auto; }
+    .tile .th { display:flex; align-items:center; gap:9px; margin:2px 0 6px; }
+    .tile .th b { margin:0; }
+    .lv-g { color:var(--tg); } .lv-r { color:var(--tr); }
     .tile b { display:block; margin:6px 0; font-size:15.5px; color:var(--ink); }
     .tile p, .tile li { font-size:14px; color:var(--body); line-height:1.6; margin:0; }
     .tile ul { margin:8px 0 0; padding-left:18px; }
-    .tag { display:inline-block; font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:.06em; text-transform:uppercase; padding:4px 11px; margin:8px 0 2px;
-      border-radius:20px; border:1px solid var(--muted); color:var(--muted); background:transparent; }
-    .tag.red { color:var(--tr); border-color:var(--tr-bd); background:var(--tr-bg); }
-    .tag.green { color:var(--tg); border-color:var(--tg-bd); background:var(--tg-bg); }
     .price-wrap { overflow-x:auto; }
     .price-table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:480px; }
     .price-table th { font-family:var(--mono); font-size:12px; color:var(--muted);
@@ -299,9 +295,9 @@
       <p class="kicker">[ 01 — servizi ]</p>
       <h2>Dove e come intervengo</h2>
       <div class="grid cols3">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>In studio</b><p>Formattazione completa: backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>A domicilio</b><p>Interventi a casa o in ufficio, solo a Porto d'Ascoli e San Benedetto del Tronto.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Da remoto</b><p>Unicamente interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>In studio</b></div><p>Formattazione completa: backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>A domicilio</b></div><p>Interventi a casa o in ufficio, solo a Porto d'Ascoli e San Benedetto del Tronto.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Da remoto</b></div><p>Unicamente interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
       </div>
     </section>
 
@@ -310,10 +306,10 @@
       <h2>Esempi di intervento</h2>
       <p class="sec-sub">Lavori tipici che eseguo.</p>
       <div class="grid cols2">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Pulizia e formattazione</b><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Upgrade SSD e RAM</b><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Rimozione malware</b><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Ottimizzazione avvio</b><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Pulizia e formattazione</b></div><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Upgrade SSD e RAM</b></div><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Rimozione malware</b></div><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Ottimizzazione avvio</b></div><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
       </div>
     </section>
 
@@ -322,10 +318,10 @@
       <h2>Guide e consigli</h2>
       <p class="sec-sub">Buone pratiche per tenere il PC in forma.</p>
       <div class="grid cols2">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Backup prima di tutto</b><ul><li>Copia documenti e foto su disco esterno o cloud.</li><li>Verifica che il backup si apra davvero.</li><li>Mai formattare senza backup verificato.</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>PC lento all'avvio?</b><ul><li>Disattiva i programmi inutili all'avvio.</li><li>Disinstalla ciò che non usi.</li><li>Un SSD cambia più di qualsiasi pulizia.</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Surriscaldamento</b><ul><li>Pulisci ventole e prese d'aria dalla polvere.</li><li>Usa il portatile su superfici rigide.</li><li>Se si spegne da solo, serve assistenza.</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Sicurezza base</b><ul><li>Aggiorna sistema e browser.</li><li>Non aprire allegati sospetti.</li><li>Password diverse per gli account importanti.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Backup prima di tutto</b></div><ul><li>Copia documenti e foto su disco esterno o cloud.</li><li>Verifica che il backup si apra davvero.</li><li>Mai formattare senza backup verificato.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>PC lento all'avvio?</b></div><ul><li>Disattiva i programmi inutili all'avvio.</li><li>Disinstalla ciò che non usi.</li><li>Un SSD cambia più di qualsiasi pulizia.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Surriscaldamento</b></div><ul><li>Pulisci ventole e prese d'aria dalla polvere.</li><li>Usa il portatile su superfici rigide.</li><li>Se si spegne da solo, serve assistenza.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Sicurezza base</b></div><ul><li>Aggiorna sistema e browser.</li><li>Non aprire allegati sospetti.</li><li>Password diverse per gli account importanti.</li></ul></div>
       </div>
     </section>
 
@@ -334,10 +330,10 @@
       <h2>Build AMD + ASUS / MSI</h2>
       <p class="sec-sub">Lineup settembre 2026, socket AM5 + DDR5. Scelta top tra ASUS e MSI, con alternativa. Preventivo personalizzato.</p>
       <div class="grid cols2">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><span class="tag green">1080p Full HD</span><b>Ryzen 5 + RX 9060 XT</b><ul><li>CPU: AMD Ryzen 5 9600X (6 core, 5,4 GHz)</li><li>Scheda madre: MSI MAG B650M Mortar WiFi (alt. ASUS TUF B650M-Plus)</li><li>GPU: ASUS Dual RX 9060 XT 16GB</li><li>RAM: 16 GB DDR5-6000 EXPO</li><li>SSD: NVMe 1 TB</li><li>Alimentatore: 650W 80+ Bronze (carico ~300W, 1×8-pin)</li><li>Dissipatore: a torre</li><li>Case: mATX (GPU corta 202mm)</li><li>Nota: BIOS via Flashback se serve</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><span class="tag green">2K QHD 144 Hz</span><b>Ryzen 7 9800X3D + RX 9070</b><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache — top gaming 2K; il 9850X3D dà solo +2-3% fps con +30% consumi)</li><li>Scheda madre: MSI MAG B850 Tomahawk Max WiFi (alt. ASUS TUF B850-Plus)</li><li>GPU: MSI RX 9070 Gaming Trio OC 16GB (alt. ASUS Prime)</li><li>RAM: 32 GB DDR5-6000 EXPO</li><li>SSD: NVMe 2 TB</li><li>Alimentatore: 750W 80+ Gold (carico ~420W, 2×8-pin)</li><li>Dissipatore: dual-tower o AIO 240mm+</li><li>Case: mid-tower ATX (GPU ~330mm)</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><span class="tag red">4K UHD</span><b>Ryzen 7 9800X3D + RX 9070 XT</b><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache — a 4K la GPU conta più della CPU)</li><li>Scheda madre: MSI MPG X870E Carbon WiFi (alt. ASUS ROG Strix X870E-E)</li><li>GPU: MSI RX 9070 XT Vanguard SOC 16GB (alt. ASUS TUF OC)</li><li>RAM: 32 GB DDR5-6000 EXPO</li><li>SSD: PCIe 5.0 da 2 TB</li><li>Alimentatore: 850W 80+ Gold ATX 3.1 (carico ~500W)</li><li>Nota: servono 3 cavi 8-pin</li><li>Dissipatore: dual-tower o AIO 360mm</li><li>Case: mid-tower ATX (GPU ~330mm)</li></ul></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><span class="tag red">Top di gamma 4K/8K</span><b>Ryzen 9 9950X3D + RTX 5090</b><ul><li>CPU: AMD Ryzen 9 9950X3D (16 core, 3D V-Cache)</li><li>Scheda madre: MSI MPG X870E Edge TI WiFi</li><li>GPU: MSI RTX 5090 Ventus 3X OC 32GB GDDR7</li><li>RAM: 64 GB Kingston FURY Renegade RGB DDR5 7200 (2×32)</li><li>SSD: 2× Samsung 9100 PRO 1TB NVMe PCIe 5.0</li><li>Dissipatore: MSI MAG CoreLiquid I360 White</li><li>Case: MSI MAG Pano M100R White</li><li>Alimentatore: Corsair RM1200x Shift 1200W 80+ Gold</li><li>Assemblaggio MMOS: cable management, OS, driver e test finali</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b><span class="lv-g">1080p Full HD · </span>Ryzen 5 + RX 9060 XT</b></div><ul><li>CPU: AMD Ryzen 5 9600X (6 core, 5,4 GHz)</li><li>Scheda madre: MSI MAG B650M Mortar WiFi (alt. ASUS TUF B650M-Plus)</li><li>GPU: ASUS Dual RX 9060 XT 16GB</li><li>RAM: 16 GB DDR5-6000 EXPO</li><li>SSD: NVMe 1 TB</li><li>Alimentatore: 650W 80+ Bronze (carico ~300W, 1×8-pin)</li><li>Dissipatore: a torre</li><li>Case: mATX (GPU corta 202mm)</li><li>Nota: BIOS via Flashback se serve</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b><span class="lv-g">2K QHD 144 Hz · </span>Ryzen 7 9800X3D + RX 9070</b></div><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache — top gaming 2K; il 9850X3D dà solo +2-3% fps con +30% consumi)</li><li>Scheda madre: MSI MAG B850 Tomahawk Max WiFi (alt. ASUS TUF B850-Plus)</li><li>GPU: MSI RX 9070 Gaming Trio OC 16GB (alt. ASUS Prime)</li><li>RAM: 32 GB DDR5-6000 EXPO</li><li>SSD: NVMe 2 TB</li><li>Alimentatore: 750W 80+ Gold (carico ~420W, 2×8-pin)</li><li>Dissipatore: dual-tower o AIO 240mm+</li><li>Case: mid-tower ATX (GPU ~330mm)</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b><span class="lv-r">4K UHD · </span>Ryzen 7 9800X3D + RX 9070 XT</b></div><ul><li>CPU: AMD Ryzen 7 9800X3D (3D V-Cache — a 4K la GPU conta più della CPU)</li><li>Scheda madre: MSI MPG X870E Carbon WiFi (alt. ASUS ROG Strix X870E-E)</li><li>GPU: MSI RX 9070 XT Vanguard SOC 16GB (alt. ASUS TUF OC)</li><li>RAM: 32 GB DDR5-6000 EXPO</li><li>SSD: PCIe 5.0 da 2 TB</li><li>Alimentatore: 850W 80+ Gold ATX 3.1 (carico ~500W)</li><li>Nota: servono 3 cavi 8-pin</li><li>Dissipatore: dual-tower o AIO 360mm</li><li>Case: mid-tower ATX (GPU ~330mm)</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b><span class="lv-r">Top di gamma 4K/8K · </span>Ryzen 9 9950X3D + RTX 5090</b></div><ul><li>CPU: AMD Ryzen 9 9950X3D (16 core, 3D V-Cache)</li><li>Scheda madre: MSI MPG X870E Edge TI WiFi</li><li>GPU: MSI RTX 5090 Ventus 3X OC 32GB GDDR7</li><li>RAM: 64 GB Kingston FURY Renegade RGB DDR5 7200 (2×32)</li><li>SSD: 2× Samsung 9100 PRO 1TB NVMe PCIe 5.0</li><li>Dissipatore: MSI MAG CoreLiquid I360 White</li><li>Case: MSI MAG Pano M100R White</li><li>Alimentatore: Corsair RM1200x Shift 1200W 80+ Gold</li><li>Assemblaggio MMOS: cable management, OS, driver e test finali</li></ul></div>
       </div>
       <p class="sec-sub">Compatibilità verificata al 100%: socket AM5 su tutto, DDR5-6000 sweet spot AM5, PSU con ~40% di margine, B650 con Flashback per Ryzen 9000, triple-fan solo in case con clearance 340mm+.</p>
     </section>
@@ -362,9 +358,9 @@
       </div>
       <p class="sec-sub">Uscita e tariffe orarie.</p>
       <div class="grid cols3">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Uscita — € 21</b><p>Diritto di uscita in zona, poi vale la tariffa oraria.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Privati — € 21/h</b><p>Assistenza a domicilio e in studio per privati.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Aziende — € 28/h</b><p>Assistenza per aziende e partite IVA.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Uscita — € 21</b></div><p>Diritto di uscita in zona, poi vale la tariffa oraria.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Privati — € 21/h</b></div><p>Assistenza a domicilio e in studio per privati.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Aziende — € 28/h</b></div><p>Assistenza per aziende e partite IVA.</p></div>
       </div>
     </section>
 
@@ -373,9 +369,9 @@
       <h2>Hardware usato garantito</h2>
       <p class="sec-sub">In arrivo: pezzi testati da MMOS, con noi come tramite col venditore.</p>
       <div class="grid cols3">
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Come funziona</b><p>Non contatti il venditore: contatti noi e noi ci occupiamo del resto. Facciamo da tramite e verifichiamo che tutto funzioni correttamente.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Cosa troverai</b><p>GPU, CPU, RAM, SSD e PC completi ricondizionati, con stato reale dichiarato.</p></div>
-        <div class="tile"><span class="mk" aria-hidden="true"></span><b>Disponibilità</b><p>La lista arriva qui a breve: scrivimi su WhatsApp, Facebook o Discord per sapere cosa c'è ora.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Come funziona</b></div><p>Non contatti il venditore: contatti noi e noi ci occupiamo del resto. Facciamo da tramite e verifichiamo che tutto funzioni correttamente.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Cosa troverai</b></div><p>GPU, CPU, RAM, SSD e PC completi ricondizionati, con stato reale dichiarato.</p></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Disponibilità</b></div><p>La lista arriva qui a breve: scrivimi su WhatsApp, Facebook o Discord per sapere cosa c'è ora.</p></div>
       </div>
     </section>
 
