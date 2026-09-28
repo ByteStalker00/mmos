@@ -96,6 +96,8 @@
         if (motionOK()) start(); else { stop(); resize(); frame(0); stop(); }
         syncFxBtn();
       });
+      resize(); start();
+    })();
     (function () {
       var fab = document.getElementById('chatFab');
       var panel = document.getElementById('chatPanel');
