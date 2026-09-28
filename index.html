@@ -151,18 +151,17 @@
       cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; }
     .music-tab svg { width:20px; height:20px; }
     .music-panel { position:fixed; left:0; top:50%; transform:translate(-105%,-50%);
-      transition:transform .3s ease; z-index:41; background:var(--card);
-      border:1px solid var(--line); border-left:none; border-radius:0 14px 14px 0;
-      padding:10px; width:min(260px,80vw); box-shadow:var(--term-shadow); }
+      transition:transform .32s ease; z-index:41; background:var(--card);
+      border:1px solid var(--line); border-left:none; border-radius:0 16px 16px 0;
+      padding:14px 14px 12px; width:min(340px,88vw); box-shadow:var(--term-shadow); }
     .music-panel.open { transform:translate(0,-50%); }
-    .music-head { display:flex; align-items:center; justify-content:space-between;
-      font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:8px; }
+    .music-head { display:flex; align-items:center; gap:8px;
+      font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:10px; }
+    .music-head svg { width:16px; height:16px; fill:#1db954; flex:0 0 auto; }
+    .music-head span { flex:1; }
     .music-close { background:none; border:1px solid var(--line); color:var(--ink);
-      border-radius:7px; font-size:12px; padding:2px 8px; cursor:pointer; font-family:var(--mono); }
-    .spotify-nav { width:28px; height:28px; flex:0 0 auto; display:inline-flex;
-      align-items:center; justify-content:center; background:#1db954;
-      border:1px solid #14833d; border-radius:50%; cursor:pointer; padding:0; }
-    .spotify-nav svg { width:15px; height:15px; fill:#fff; }
+      border-radius:7px; font-size:12px; padding:3px 10px; cursor:pointer; font-family:var(--mono); }
+    .music-close:hover { border-color:#57503f; }
     .music-panel iframe { display:block; border:0; }
   </style>
 </head>
@@ -181,7 +180,6 @@
       <div class="nav-btns">
         <button class="theme-btn" id="themeBtn" type="button" aria-label="Passa al tema chiaro" title="Cambia tema"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
         <button class="theme-btn" id="fxBtn" type="button" aria-label="Anima sfondo" title="Anima sfondo"><svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg><svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></svg></button>
-      <button class="spotify-nav" id="musicNavBtn" type="button" aria-label="Playlist Spotify" title="Playlist Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.36.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></button>
       <a class="btn nav discord" href="https://discord.gg/v6fb4zrPfK"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.319 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 00-.042-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.009c.12.099.246.198.373.292a.077.077 0 01-.006.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.211 0 2.176 1.095 2.157 2.419 0 1.333-.956 2.419-2.157 2.419zm7.975 0c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.095 2.157 2.419 0 1.333-.946 2.419-2.157 2.419z"/></svg>Discord</a>
       <a class="btn nav" href="https://www.facebook.com/profile.php?id=61594506196534"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
       <a class="btn nav github" href="https://github.com/ByteStalker00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
@@ -287,7 +285,7 @@
   </footer>
   <button class="music-tab" id="musicTab" type="button" aria-label="Apri playlist" aria-expanded="false" title="Playlist"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.36.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></button>
   <aside class="music-panel" id="musicPanel" aria-label="Playlist Spotify">
-    <div class="music-head"><span>[ mmos • playlist ]</span><button class="music-close" id="musicClose" type="button">chiudi</button></div>
+    <div class="music-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.36.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg><span>[ mmos • playlist ]</span><button class="music-close" id="musicClose" type="button">chiudi</button></div>
     <iframe data-testid="embed-iframe" title="Playlist Spotify MMOS" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3QA5MeyQuxplbsEOfG2JNg?utm_source=generator&si=04b7cf1c3373494f&autoplay=1" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </aside>
   <script src="./mmos.js" defer></script>

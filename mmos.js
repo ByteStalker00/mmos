@@ -102,7 +102,6 @@
       var tab = document.getElementById('musicTab');
       var panel = document.getElementById('musicPanel');
       var close = document.getElementById('musicClose');
-      var navBtn = document.getElementById('musicNavBtn');
       if (!tab || !panel) return;
       function set(open) {
         panel.classList.toggle('open', open);
@@ -110,7 +109,6 @@
         tab.style.display = open ? 'none' : '';
       }
       tab.addEventListener('click', function () { set(true); });
-      if (navBtn) navBtn.addEventListener('click', function () { set(!panel.classList.contains('open')); });
       if (close) close.addEventListener('click', function () {
         set(false);
         try { sessionStorage.setItem('mmos-music-seen', '1'); } catch (e) {}
