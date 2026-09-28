@@ -212,11 +212,16 @@
       var tab = document.getElementById('musicTab');
       var panel = document.getElementById('musicPanel');
       var close = document.getElementById('musicClose');
+      var SPOTIFY_SRC = 'https://open.spotify.com/embed/playlist/3QA5MeyQuxplbsEOfG2JNg?utm_source=generator&si=04b7cf1c3373494f';
       if (!tab || !panel) return;
       function set(open) {
         panel.classList.toggle('open', open);
         tab.setAttribute('aria-expanded', open ? 'true' : 'false');
         tab.style.display = open ? 'none' : '';
+        if (open) {
+          var frame = panel.querySelector('iframe');
+          if (frame && !frame.getAttribute('src')) frame.setAttribute('src', SPOTIFY_SRC + '&autoplay=1');
+        }
       }
       tab.addEventListener('click', function () { set(true); });
       if (close) close.addEventListener('click', function () {
