@@ -211,6 +211,9 @@
     .typing i:nth-child(3) { animation-delay:.4s; margin-right:0; }
     @keyframes tblink { 0%,100% { opacity:.25; } 50% { opacity:1; } }
     @media (prefers-reduced-motion: reduce) { .typing i { animation:none; } }
+    @media (max-width:640px) {
+      html, body { overflow-x:hidden; overflow-x:clip; }
+    }
     @media (max-width:480px) {
       .chat-fab { right:12px; bottom:12px; }
       .chat-panel { left:8px; right:8px; bottom:68px; width:auto; max-height:62vh; }
