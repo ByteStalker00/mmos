@@ -222,7 +222,9 @@
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       setTimeout(function () {
         if (reduceMotion) return;
-        if (sessionStorage.getItem('mmos-music-seen')) return;
+        var seen2 = null;
+        try { seen2 = sessionStorage.getItem('mmos-music-seen'); } catch (e) {}
+        if (seen2) return;
         try { sessionStorage.setItem('mmos-music-seen', '1'); } catch (e) {}
         set(true);
         var frame = panel.querySelector('iframe');
