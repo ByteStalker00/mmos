@@ -172,6 +172,8 @@
       border-bottom:1px solid var(--line); font-family:var(--mono); font-size:12px;
       color:var(--ink); }
     .chat-head .on { width:8px; height:8px; border-radius:50%; background:#1e9e50; }
+    .chat-head img { height:18px; width:auto; background:#fff; border:1px solid var(--line);
+      border-radius:5px; padding:1px 5px; }
     .chat-head span { flex:1; }
     .chat-x { background:none; border:1px solid var(--line); color:var(--ink);
       border-radius:7px; font-size:12px; padding:2px 8px; cursor:pointer; font-family:var(--mono); }
@@ -380,7 +382,7 @@
   </footer>
   <button class="chat-fab" id="chatFab" type="button" aria-label="Apri assistente" aria-expanded="false" title="Assistente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.18.25.43.25.68l.05 1.69c0 .51.55.85 1.03.6l1.99-.95c.17-.08.36-.12.55-.12H12c5.64 0 10-4.13 10-9.7S17.64 2 12 2zm-5.5 8.5A1.5 1.5 0 1 1 8 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 12 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 16 9a1.5 1.5 0 0 1-1.5 1.5z" fill="currentColor"/></svg></button>
   <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistente MMOS">
-    <div class="chat-head"><span class="on"></span><span>mmos assistant</span><button class="chat-x" id="chatClose" type="button">chiudi</button></div>
+    <div class="chat-head"><span class="on"></span><img src="./logo-cropped.png" alt="MMOS" width="60" height="20"><span>mmos assistant</span><button class="chat-x" id="chatClose" type="button">chiudi</button></div>
     <div class="chat-log" id="chatLog"></div>
     <div class="chips" id="chatChips"></div>
     <form class="chat-in" id="chatForm"><input id="chatInput" type="text" placeholder="Scrivi una domanda…" autocomplete="off" aria-label="Scrivi una domanda"><button type="submit">→</button></form>
