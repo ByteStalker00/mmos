@@ -122,7 +122,7 @@
       function blocked(e) {
         if (e.key === 'F12') return true;
         var k = (e.key || '').toUpperCase();
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (k === 'I' || k === 'J' || k === 'C')) return true;
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (k === 'I' || k === 'J' || k === 'C' || k === 'K')) return true;
         if ((e.ctrlKey || e.metaKey) && k === 'U') return true;
         return false;
       }
