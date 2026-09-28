@@ -243,25 +243,5 @@
         }
       }
       tab.addEventListener('click', function () { set(true); });
-      if (close) close.addEventListener('click', function () {
-        set(false);
-        try { sessionStorage.setItem('mmos-music-seen', '1'); } catch (e) {}
-      });
-      var seen = null;
-      try { seen = sessionStorage.getItem('mmos-music-seen'); } catch (e) {}
-      if (!seen) setTimeout(function () { set(true); }, 1200);
-      // comparsa automatica laterale ridotta + tentativo di auto-avvio
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      setTimeout(function () {
-        if (reduceMotion) return;
-        var seen2 = null;
-        try { seen2 = sessionStorage.getItem('mmos-music-seen'); } catch (e) {}
-        if (seen2) return;
-        try { sessionStorage.setItem('mmos-music-seen', '1'); } catch (e) {}
-        set(true);
-        var frame = panel.querySelector('iframe');
-        if (frame && frame.src.indexOf('autoplay=1') === -1) {
-          frame.src += (frame.src.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
-        }
-      }, 1200);
+      if (close) close.addEventListener('click', function () { set(false); });
     })();
