@@ -117,6 +117,8 @@
         toast();
       });
     })();
+    (function () {
+      var fab = document.getElementById('chatFab');
       var panel = document.getElementById('chatPanel');
       var close = document.getElementById('chatClose');
       var log = document.getElementById('chatLog');
