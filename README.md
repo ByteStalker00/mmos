@@ -6,23 +6,49 @@ ottimizzazione e debug da remoto ovunque.
 
 🌐 Live: <https://bytestalker00.github.io/mmos/>
 
-## Contenuti
+## Biografia
 
-- **Hero** — titolo, bio, zone cliccabili (Google Maps), CTA servizi, terminale stile `zsh`
-- **Servizi** — studio, domicilio, remoto
-- **Portfolio** — esempi di intervento
-- **Guide** — backup, avvio lento, surriscaldamento, sicurezza
-- **Build** — configurazioni AMD + ASUS/MSI verificate per 1080p, 2K, 4K e top di gamma
-- **Listino** — tariffe servizi software + uscita e tariffe orarie
-- **Usato** — hardware ricondizionato con MMOS come intermediario (in arrivo)
-- **FAQ** — zone, remoto, backup, costi build
-- **Assistente virtuale** — chat bottom-right che risponde dai contenuti del sito + handoff WhatsApp
-- **Playlist Spotify** — drawer laterale a comparsa
-- **Navbar/Footer** — 7 sezioni, social (Discord, Facebook, GitHub), doppio tema, particelle animate
+> Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio,
+> esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto.
+> Da remoto eseguo unicamente interventi di ottimizzazione e debug.
+
+## Servizi
+
+- **In studio** — formattazione completa: backup dati, reinstallazione pulita, driver e programmi
+- **A domicilio** — solo Porto d'Ascoli e San Benedetto del Tronto
+- **Da remoto** — unicamente ottimizzazione e debug software (€ 21/h)
+- **Build su misura** — da privato non vendo componenti: consiglio cosa acquistare,
+  tu compri, io assemblo con OS, driver, ottimizzazione e test finali
+- **Usato garantito** (in arrivo) — contatti MMOS, noi gestiamo tutto col venditore
+  e verifichiamo che funzioni
+
+## Tariffe
+
+| Servizio | Prezzo |
+|---|---|
+| Installazione SO (pulita + driver + base) | € 48 |
+| Ripristino SO, primo avvio, programmi, pulizia PC | € 34 |
+| Rimozione virus (analisi + protezione) | € 41 |
+| Backup / trasferimento | da € 34 |
+| Assistenza online | € 21/h |
+| Uscita in zona | € 21 |
+| Privati / Aziende | € 21/h / € 28/h |
+
+## Contatti
+
+- Facebook: <https://www.facebook.com/profile.php?id=61594506196534>
+- Discord: <https://discord.gg/v6fb4zrPfK>
+- WhatsApp: <https://wa.me/393755236202>
+- GitHub: <https://github.com/ByteStalker00>
+
+## Contenuti del sito
+
+Hero con zone cliccabili (Maps) e terminale · Servizi · Portfolio · Guide e consigli ·
+Build AMD + ASUS/MSI verificate (1080p, 2K, 4K, top RTX 5090) · Listino · Usato ·
+FAQ · Assistente virtuale con handoff WhatsApp · Playlist Spotify · Doppio tema
+chiaro/scuro · Particelle animate · CSP rigida.
 
 ## Anteprima link (Open Graph)
-
-Quando il link viene condiviso (WhatsApp, Telegram, Discord, Facebook) mostra:
 
 | Meta | Valore |
 |---|---|
@@ -31,7 +57,7 @@ Quando il link viene condiviso (WhatsApp, Telegram, Discord, Facebook) mostra:
 | `og:description` | Bio completa |
 | `og:image` | `og-cover.jpg` 1200×630 |
 
-Nota: le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere con `?v=N` in coda.
+Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere con `?v=N` in coda.
 
 ## Struttura file
 
@@ -43,24 +69,9 @@ Nota: le app memorizzano l'anteprima per URL — per forzarne una nuova, condivi
 | `og-cover.jpg` | Immagine anteprima condivisioni 1200×630 |
 | `favicon.ico` / `favicon-180.png` | Icone browser e Apple |
 
-Nessun file orfano: tutto ciò che è nel repo è referenziato dalla pagina.
-
-## Temi e stile
-
-Stile ispirato a opencode.ai: sfondo carta, etichette monospace `[ ... ]`, sezioni numerate,
-card bordate, terminale scuro. Doppia tavolozza **scuro/chiaro** con selettore sole/luna
-e sfondo particellare animato su canvas (rispetta `prefers-reduced-motion`, con override manuale).
-
-## Sicurezza
-
-- CSP rigida via meta (`script-src 'self'`, niente `eval`/inline handler)
-- JavaScript tutto in `mmos.js`, validato con `node --check`
-- Blocco tasto destro + F12/scorciatoie dev (deterrenza — non blindatura reale)
-- Sito statico: nessun backend, login o dato utente
-
 ## Sviluppo
 
-Nessuna build: modificare `index.html` / `mmos.js`, validare e pushare su `main`.
+Nessuna build: modificare, validare e pushare su `main`.
 
 ```powershell
 node --check mmos.js
@@ -69,7 +80,7 @@ git commit -m "Descrizione"
 git push origin main
 ```
 
-Il deploy GitHub Pages (branch `main`, root) si aggiorna in 1–2 minuti.
-Per forzare il ricaricamento del JS nei browser, incrementare `?v=N` nel tag script.
+Deploy GitHub Pages (branch `main`, root) in 1–2 minuti.
+Per forzare il ricaricamento del JS, incrementare `?v=N` nel tag script.
 
 © 2026 MMOS • Assistenza Privata
