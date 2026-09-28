@@ -157,12 +157,12 @@
     .soc:hover { transform:translateY(-2px); }
     .soc svg { width:11px; height:11px; fill:var(--ink); }
     .copy { font-size:10px; }
-    .chat-fab { position:fixed; left:16px; bottom:16px; z-index:42; width:48px; height:48px;
+    .chat-fab { position:fixed; right:16px; bottom:16px; z-index:42; width:48px; height:48px;
       border-radius:50%; background:var(--red); border:1px solid rgba(0,0,0,.2);
       cursor:pointer; display:flex; align-items:center; justify-content:center;
       box-shadow:var(--term-shadow); }
     .chat-fab svg { width:22px; height:22px; fill:#fff; }
-    .chat-panel { position:fixed; left:16px; bottom:76px; z-index:42;
+    .chat-panel { position:fixed; right:16px; bottom:76px; z-index:42;
       width:min(330px,calc(100vw - 32px)); max-height:min(480px,70vh);
       display:none; flex-direction:column; overflow:hidden;
       background:var(--card); border:1px solid var(--line); border-radius:14px;
@@ -197,7 +197,7 @@
     @keyframes tblink { 0%,100% { opacity:.25; } 50% { opacity:1; } }
     @media (prefers-reduced-motion: reduce) { .typing i { animation:none; } }
     @media (max-width:480px) {
-      .chat-fab { left:12px; bottom:12px; }
+      .chat-fab { right:12px; bottom:12px; }
       .chat-panel { left:8px; right:8px; bottom:68px; width:auto; max-height:62vh; }
     }
     .music-tab { position:fixed; left:0; top:50%; transform:translateY(-50%); z-index:40;
