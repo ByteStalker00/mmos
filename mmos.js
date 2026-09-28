@@ -170,7 +170,12 @@
       function ask(q) {
         if (!q) return;
         add(q, 'user', false);
-        add(answer(q), 'bot', true);
+        var t = document.createElement('div');
+        t.className = 'msg bot typing';
+        t.innerHTML = '<i></i><i></i><i></i>';
+        log.appendChild(t);
+        log.scrollTop = log.scrollHeight;
+        setTimeout(function () { t.remove(); add(answer(q), 'bot', true); }, 450);
       }
       var greeted = false;
       function set(open) {
@@ -184,6 +189,9 @@
       }
       fab.addEventListener('click', function () { set(!panel.classList.contains('open')); });
       close.addEventListener('click', function () { set(false); });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.key === 'Esc') && panel.classList.contains('open')) set(false);
+      });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var q = input.value.trim();
