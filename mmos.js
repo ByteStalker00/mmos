@@ -30,8 +30,9 @@
       function motionOK() { return force === 'on' ? true : force === 'off' ? false : !reduced; }
       function syncFxBtn() {
         if (!fxBtn) return;
-        var on = motionOK();
+        var on = motionOK() && !document.hidden;
         fxBtn.classList.toggle('on', on);
+        document.documentElement.classList.toggle('fx-on', on);
         fxBtn.setAttribute('aria-label', on ? 'Ferma lo sfondo' : 'Anima lo sfondo');
         fxBtn.setAttribute('title', on ? 'Ferma lo sfondo' : 'Anima lo sfondo');
       }
@@ -84,7 +85,7 @@
         raf = requestAnimationFrame(frame);
         syncFxBtn();
       }
-      function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+      function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } document.documentElement.classList.remove('fx-on'); }
       window.addEventListener('resize', resize);
       document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
       new MutationObserver(function () { C = themeColors(); })
