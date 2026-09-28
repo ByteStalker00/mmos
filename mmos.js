@@ -98,3 +98,16 @@
       });
       resize(); start();
     })();
+    (function () {
+      var tab = document.getElementById('musicTab');
+      var panel = document.getElementById('musicPanel');
+      var close = document.getElementById('musicClose');
+      if (!tab || !panel) return;
+      function set(open) {
+        panel.classList.toggle('open', open);
+        tab.setAttribute('aria-expanded', open ? 'true' : 'false');
+        tab.style.display = open ? 'none' : '';
+      }
+      tab.addEventListener('click', function () { set(true); });
+      if (close) close.addEventListener('click', function () { set(false); });
+    })();

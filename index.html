@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src https://open.spotify.com; object-src 'none'; base-uri 'self'; form-action 'none';">
   <title>MMOS • Assistenza Privata</title>
   <meta name="description" content="Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.">
   <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48">
@@ -146,6 +146,20 @@
     .soc:hover { transform:translateY(-2px); }
     .soc svg { width:11px; height:11px; fill:var(--ink); }
     .copy { font-size:10px; }
+    .music-tab { position:fixed; left:0; top:50%; transform:translateY(-50%); z-index:40;
+      width:38px; height:52px; background:#1db954; border:none; border-radius:0 10px 10px 0;
+      cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; }
+    .music-tab svg { width:20px; height:20px; }
+    .music-panel { position:fixed; left:0; top:50%; transform:translate(-105%,-50%);
+      transition:transform .3s ease; z-index:41; background:var(--card);
+      border:1px solid var(--line); border-left:none; border-radius:0 14px 14px 0;
+      padding:12px; width:min(320px,86vw); box-shadow:var(--term-shadow); }
+    .music-panel.open { transform:translate(0,-50%); }
+    .music-head { display:flex; align-items:center; justify-content:space-between;
+      font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:8px; }
+    .music-close { background:none; border:1px solid var(--line); color:var(--ink);
+      border-radius:7px; font-size:12px; padding:2px 8px; cursor:pointer; font-family:var(--mono); }
+    .music-panel iframe { display:block; border:0; }
   </style>
 </head>
 <body>
@@ -266,6 +280,11 @@
       <div class="copy">© 2026 MMOS • Assistenza Privata</div>
     </div>
   </footer>
+  <button class="music-tab" id="musicTab" type="button" aria-label="Apri playlist" aria-expanded="false" title="Playlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></button>
+  <aside class="music-panel" id="musicPanel" aria-label="Playlist Spotify">
+    <div class="music-head"><span>[ mmos • playlist ]</span><button class="music-close" id="musicClose" type="button">chiudi</button></div>
+    <iframe data-testid="embed-iframe" title="Playlist Spotify MMOS" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3QA5MeyQuxplbsEOfG2JNg?utm_source=generator&si=04b7cf1c3373494f" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </aside>
   <script src="./mmos.js" defer></script>
 </body>
 </html>
