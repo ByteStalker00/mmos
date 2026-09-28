@@ -96,7 +96,107 @@
         if (motionOK()) start(); else { stop(); resize(); frame(0); stop(); }
         syncFxBtn();
       });
-      resize(); start();
+    (function () {
+      var fab = document.getElementById('chatFab');
+      var panel = document.getElementById('chatPanel');
+      var close = document.getElementById('chatClose');
+      var log = document.getElementById('chatLog');
+      var chips = document.getElementById('chatChips');
+      var form = document.getElementById('chatForm');
+      var input = document.getElementById('chatInput');
+      if (!fab || !panel) return;
+      var KB = [
+        { k: ['dove', 'zona', 'zone', 'san benedetto', 'porto', 'ascoli', 'domicilio', 'raggiung', 'venite', 'sede'],
+          a: 'Opero in studio e a domicilio solo a <b>Porto d\u2019Ascoli e San Benedetto del Tronto</b>. Da remoto ovunque, ma solo ottimizzazione e debug.' },
+        { k: ['prezzo', 'prezzi', 'costo', 'costi', 'tariff', 'quanto', 'pagare', 'listino'],
+          a: 'Installazione SO €48 · Ripristino, primo avvio, programmi, pulizia €34 · Virus €41 · Backup/trasferimento da €34 · Online €21/h · Uscita €21 · Privati €21/h · Aziende €28/h. Dettagli in <a href="#listino">Listino</a>.' },
+        { k: ['build', 'assembl', 'computer nuovo', 'pc nuovo', 'pc gaming', 'gaming', 'configura'],
+          a: 'Build 1080p, 2K, 4K e top di gamma RTX 5090 in <a href="#build">Build</a>. Da privato non vendo pezzi: ti dico cosa comprare, tu acquisti, io assemblo e testo.' },
+        { k: ['remoto', 'distanza', 'online', 'teamviewer', 'da casa'],
+          a: 'Da remoto faccio solo <b>ottimizzazione e debug software</b> (€21/h): pulizia, avvio, errori e rallentamenti. Niente formattazioni a distanza.' },
+        { k: ['virus', 'malware', 'sicurezza', 'hacker', 'popup', 'antivirus'],
+          a: 'Rimozione virus €41 con analisi e protezione. Consigli base in <a href="#guide">Guide</a>: aggiornamenti, allegati sospetti, password diverse.' },
+        { k: ['lento', 'lentezza', 'avvio', 'veloc', 'ssd', 'impiega'],
+          a: 'Pulizia e ottimizzazione avvio €34. Se il disco è meccanico, un SSD cambia più di qualsiasi pulizia: chiedimi un preventivo.' },
+        { k: ['backup', 'dati', 'foto', 'documenti', 'persi', 'recuper'],
+          a: 'Backup da €34 con copia su disco esterno (verificata). Mai formattare senza backup: lo facciamo insieme prima.' },
+        { k: ['formatta', 'formattazione', 'installazione', 'windows', 'sistema operativo', 'so ', 'ripristino', 'reinstalla'],
+          a: 'Installazione pulita €48 (driver + aggiornamenti + base), ripristino €34. Sempre con backup verificato prima.' },
+        { k: ['programmi', 'installare', 'software', 'office', 'primo avvio', 'nuovo pc'],
+          a: 'Primo avvio e installazione programmi €34 con test finale.' },
+        { k: ['usato', 'seconda mano', 'ricondizionat'],
+          a: 'La sezione <a href="#usato">Usato</a> arriva a breve: pezzi testati, acquisto con contatto diretto col venditore.' },
+        { k: ['facebook', 'contatto', 'contatti', 'telefono', 'chiamare', 'chiamata', 'scrivere', 'parlare', 'prenotare', 'appuntamento'],
+          a: 'Scrivimi su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a> o <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">Discord</a>: diagnosi e preventivo senza impegno.' },
+        { k: ['discord', 'server', 'community'],
+          a: 'Il server è qui: <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">MMOS • Assistenza Privata su Discord</a>.' },
+        { k: ['github', 'codice', 'repository', 'progett'],
+          a: 'Questo sito è open: <a href="https://github.com/ByteStalker00" target="_blank" rel="noopener">github.com/ByteStalker00</a>.' },
+        { k: ['playlist', 'musica', 'spotify', 'canzoni'],
+          a: 'C\u2019è il tasto verde a sinistra: apre la playlist Spotify del sito.' },
+        { k: ['tema', 'chiaro', 'scuro', 'dark', 'light', 'notte'],
+          a: 'Usa il sole/luna in alto per il tema chiaro o scuro, e il play per le particelle animate.' },
+        { k: ['orari', 'orario', 'aperto', 'quando'],
+          a: 'Scrivimi su Facebook o Discord e concordiamo giorno e ora, anche serali su appuntamento.' },
+        { k: ['ciao', 'buongiorno', 'buonasera', 'salve', 'ehi'],
+          a: 'Ciao! Sono l\u2019assistente MMOS: chiedimi di zone, prezzi, build o assistenza.' },
+        { k: ['grazie'],
+          a: 'Prego! Per un preventivo diretto scrivimi su Facebook.' }
+      ];
+      var FALLBACK = 'Non ho capito: prova con parole come <b>prezzi</b>, <b>zona</b>, <b>build</b>, <b>virus</b> o <b>contatti</b> — oppure chiedi su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a>.';
+      function norm(s) {
+        return s.toLowerCase().replace(/[\u00e0\u00e1]/g, 'a').replace(/[\u00e8\u00e9]/g, 'e')
+          .replace(/\u00ec/g, 'i').replace(/[\u00f2\u00f3]/g, 'o').replace(/\u00f9/g, 'u');
+      }
+      function answer(q) {
+        var n = ' ' + norm(q) + ' ';
+        var best = null, bestScore = 0;
+        for (var i = 0; i < KB.length; i++) {
+          var s = 0, ks = KB[i].k;
+          for (var j = 0; j < ks.length; j++) if (n.indexOf(ks[j]) !== -1) s += ks[j].length;
+          if (s > bestScore) { bestScore = s; best = KB[i]; }
+        }
+        return best ? best.a : FALLBACK;
+      }
+      function add(text, who, html) {
+        var d = document.createElement('div');
+        d.className = 'msg ' + who;
+        if (html) d.innerHTML = text; else d.textContent = text;
+        log.appendChild(d);
+        log.scrollTop = log.scrollHeight;
+      }
+      function ask(q) {
+        if (!q) return;
+        add(q, 'user', false);
+        add(answer(q), 'bot', true);
+      }
+      var greeted = false;
+      function set(open) {
+        panel.classList.toggle('open', open);
+        fab.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open && !greeted) {
+          greeted = true;
+          add('Ciao! Chiedimi di <b>prezzi</b>, <b>zona</b>, <b>build</b> o <b>contatti</b>.', 'bot', true);
+        }
+        if (open) setTimeout(function () { input.focus(); }, 50);
+      }
+      fab.addEventListener('click', function () { set(!panel.classList.contains('open')); });
+      close.addEventListener('click', function () { set(false); });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var q = input.value.trim();
+        input.value = '';
+        ask(q);
+      });
+      var CHIP_Q = ['Dove operate?', 'Quanto costa?', 'Fate build?', 'Contatti?'];
+      for (var c = 0; c < CHIP_Q.length; c++) {
+        (function (q) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'chip'; b.textContent = q;
+          b.addEventListener('click', function () { ask(q); });
+          chips.appendChild(b);
+        })(CHIP_Q[c]);
+      }
     })();
     (function () {
       var tab = document.getElementById('musicTab');
