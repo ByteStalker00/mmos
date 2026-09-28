@@ -40,7 +40,11 @@
       function themeColors() {
         var light = document.documentElement.getAttribute('data-theme') === 'light';
         var base = getComputedStyle(document.documentElement).getPropertyValue('--dot').trim() || (light ? 'rgba(28,26,23,.5)' : 'rgba(255,255,255,.5)');
-        return { base: base, red: light ? 'rgba(210,31,38,.45)' : 'rgba(229,72,77,.5)', navy: light ? 'rgba(27,35,64,.4)' : 'rgba(120,140,220,.45)' };
+        return { lite: light, base: base,
+          red: light ? 'rgba(190,25,32,.55)' : 'rgba(229,72,77,.5)',
+          navy: light ? 'rgba(27,35,64,.5)' : 'rgba(120,140,220,.45)',
+          gray: light ? 'rgba(100,95,85,.5)' : 'rgba(150,145,135,.35)',
+          black: 'rgba(25,22,19,.6)' };
       }
       var C = themeColors();
       function resize() {
@@ -60,7 +64,7 @@
             vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22,
             rad: .6 + Math.random() * 1.7, ph: Math.random() * 6.28,
             sp: .4 + Math.random() * 1.1,
-            col: r < .72 ? 'base' : (r < .87 ? 'red' : 'navy')
+            col: r < .58 ? 'base' : (r < .7 ? 'red' : (r < .8 ? 'navy' : (r < .9 ? 'gray' : (C.lite ? 'black' : 'base'))))
           });
         }
       }
