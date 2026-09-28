@@ -55,11 +55,11 @@
     .wrap { max-width:880px; margin:0 auto; padding:0 20px 56px; }
     /* nav */
     nav { display:flex; align-items:center; justify-content:space-between; gap:10px;
-      padding:14px 0; border-bottom:1px solid var(--line);
+      max-width:700px; margin:0 auto; padding:12px 0; border-bottom:1px solid var(--line);
       position:sticky; top:0; z-index:10; background:var(--navbg);
       backdrop-filter:blur(8px); }
-    nav img { height:24px; width:auto; background:#fff; border:1px solid var(--line);
-      border-radius:7px; padding:2px 7px; }
+    nav img { height:22px; width:auto; background:#fff; border:1px solid var(--line);
+      border-radius:6px; padding:2px 6px; }
     /* hero */
     .hero { text-align:center; padding:56px 0 8px; }
     .eyebrow { font-family:var(--mono); font-size:13px; color:var(--muted); }
@@ -70,20 +70,20 @@
       color:#fff; text-decoration:none; font-weight:600; padding:10px 20px;
       border-radius:9px; font-size:15px; border:1px solid #1463cc; }
     .btn svg { width:17px; height:17px; fill:#fff; }
-    .btn.nav { padding:5px 11px; font-size:13px; }
-    .btn.nav svg { width:13px; height:13px; }
+    .btn.nav { padding:5px 10px; font-size:12px; }
+    .btn.nav svg { width:12px; height:12px; }
     .btn.discord { background:#5865f2; border-color:#4752c4; }
     .btn.github { background:#24292f; border-color:var(--line); }
     .nav-btns { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
     .nav-links { display:none; gap:14px; }
     .nav-links a { font-family:var(--mono); font-size:12px; color:var(--muted); text-decoration:none; }
     .nav-links a:hover { color:var(--ink); }
-    .theme-btn { width:30px; height:30px; flex:0 0 auto; display:inline-flex;
+    .theme-btn { width:28px; height:28px; flex:0 0 auto; display:inline-flex;
       align-items:center; justify-content:center; color:var(--ink);
       background:var(--card); border:1px solid var(--line); border-radius:50%;
       cursor:pointer; padding:0; transition:transform .3s ease, border-color .15s ease; }
     .theme-btn:hover { transform:rotate(20deg); border-color:#57503f; }
-    .theme-btn svg { width:15px; height:15px; }
+    .theme-btn svg { width:14px; height:14px; }
     .theme-btn .icon-sun { display:none; }
     [data-theme="light"] .theme-btn .icon-sun { display:block; }
     [data-theme="light"] .theme-btn .icon-moon { display:none; }
