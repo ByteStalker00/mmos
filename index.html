@@ -114,7 +114,12 @@
       .btn.nav { font-size:0; gap:0; padding:5px 6px; min-width:0; }
       .btn.nav svg { width:12px; height:12px; }
     }
-    .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+    .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line);
+      font-size:16px; padding:12px 24px;
+      transition:transform .15s ease, border-color .15s ease, box-shadow .2s ease; }
+    .btn.ghost:hover { transform:translateY(-2px); border-color:var(--fb); box-shadow:0 6px 18px rgba(0,0,0,.25); }
+    .btn.ghost .arr { display:inline-block; transition:transform .2s ease; }
+    .btn.ghost:hover .arr { transform:translateY(3px); }
     /* terminal */
     .term { margin:30px auto 0; max-width:100%; background:#0e0d0c; color:#f1ecec;
       border:1px solid var(--term-border); border-radius:12px; overflow:hidden; text-align:left;
@@ -291,7 +296,7 @@
       <h1><span class="m1">M</span><span class="m2">M</span>OS • Assistenza Privata</h1>
       <p class="lede">Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.</p>
       <div class="cta-row">
-        <a class="btn ghost" href="./#servizi">Vedi i servizi</a>
+        <a class="btn ghost" href="./#servizi">Vedi i servizi <span class="arr" aria-hidden="true">↓</span></a>
       </div>
       <div class="term" aria-hidden="true">
         <div class="term-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="term-title">mmos — zsh</span></div>
