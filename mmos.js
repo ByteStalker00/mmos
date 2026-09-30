@@ -186,7 +186,9 @@
         { k: ['ciao', 'buongiorno', 'buonasera', 'salve', 'ehi'],
           a: 'Ciao! Sono l\u2019assistente MMOS: chiedimi di zone, prezzi, build o assistenza.' },
         { k: ['grazie'],
-          a: 'Prego! Per un preventivo diretto scrivimi su Facebook.' }
+          a: 'Prego! Per un preventivo diretto scrivimi su Facebook.' },
+        { k: ['biografia', 'bio', 'chi sei', 'storia', 'chi e'],
+          a: 'Dietro MMOS c\u2019è un tecnico privato: diagnosi gratuita, preventivo chiaro, intervento in studio, a domicilio (solo zona) o da remoto (solo software). Dettagli in <a href="bio.html">Biografia</a>.' }
       ];
       var FALLBACK = 'Non ho capito: prova con parole come <b>prezzi</b>, <b>zona</b>, <b>build</b>, <b>virus</b> o <b>contatti</b> — oppure chiedi su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a>.';
       function norm(s) {
