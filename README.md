@@ -45,7 +45,7 @@ ottimizzazione e debug da remoto ovunque.
 
 Hero con zone cliccabili (Maps) e terminale · Servizi · Portfolio · Guide e consigli ·
 Build AMD + ASUS/MSI verificate (1080p, 2K, 4K, top RTX 5090) · Listino · Usato ·
-FAQ · Assistente virtuale con handoff WhatsApp · Playlist Spotify · Doppio tema
+FAQ · Assistente virtuale con handoff WhatsApp e fallback IA gratis · Playlist Spotify · Doppio tema
 chiaro/scuro · Particelle animate · CSP rigida.
 
 ## Anteprima link (Open Graph)

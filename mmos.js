@@ -210,6 +210,20 @@
         log.appendChild(d);
         log.scrollTop = log.scrollHeight;
       }
+      var AI_CTX = 'Sei l\u2019assistente di MMOS \u2022 Assistenza Privata a Porto d\u2019Ascoli e San Benedetto del Tronto. Prezzi: installazione SO 48\u20ac; ripristino, primo avvio, programmi, pulizia 34\u20ac; rimozione virus 41\u20ac; backup/trasferimento da 34\u20ac; assistenza online 21\u20ac/h; uscita in zona 21\u20ac; privati 21\u20ac/h; aziende 28\u20ac/h. Studio e domicilio solo in zona; da remoto solo ottimizzazione e debug software, mai formattazioni a distanza. Rispondi in italiano, massimo 60 parole, tono cordiale. Per preventivi personalizzati invita a scrivere su WhatsApp al 375 523 6202.';
+      function askAI(q, done) {
+        var ctrl = null;
+        try { ctrl = new AbortController(); } catch (e) {}
+        var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 25000);
+        var url = 'https://text.pollinations.ai/' + encodeURIComponent(AI_CTX + '\nDomanda: ' + q) + '?model=openai';
+        function fin(txt) { clearTimeout(timer); done(txt); }
+        fetch(url, ctrl ? { signal: ctrl.signal } : undefined).then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.text();
+        }).then(function (txt) {
+          fin((txt || '').trim().slice(0, 800) || null);
+        }).catch(function () { fin(null); });
+      }
       function ask(q) {
         if (!q) return;
         add(q, 'user', false);
@@ -219,7 +233,16 @@
         t.innerHTML = '<i></i><i></i><i></i>';
         log.appendChild(t);
         log.scrollTop = log.scrollHeight;
-        setTimeout(function () { t.remove(); add(answer(q), 'bot', true); }, 450);
+        var kb = answer(q);
+        if (kb !== FALLBACK) {
+          setTimeout(function () { t.remove(); add(kb, 'bot', true); }, 450);
+          return;
+        }
+        askAI(q, function (txt) {
+          t.remove();
+          if (txt) add(txt + ' (risposta IA sperimentale: verifica prezzi e zone sul sito.)', 'bot', false);
+          else add(FALLBACK, 'bot', true);
+        });
       }
       var greeted = false;
       function set(open) {
@@ -227,7 +250,7 @@
         fab.setAttribute('aria-expanded', open ? 'true' : 'false');
         if (open && !greeted) {
           greeted = true;
-          add('Ciao! Chiedimi di <b>prezzi</b>, <b>zona</b>, <b>build</b> o <b>contatti</b>.', 'bot', true);
+          add('Ciao! Chiedimi di <b>prezzi</b>, <b>zona</b>, <b>build</b> o <b>contatti</b> — oppure qualsiasi altra cosa, ci pensa l\u2019IA gratis.', 'bot', true);
         }
         if (open) setTimeout(function () { input.focus(); }, 50);
       }
