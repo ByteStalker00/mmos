@@ -263,6 +263,13 @@
     .back { font-family:var(--mono); font-size:12px; margin:20px 0 0; }
     .back a { color:var(--muted); text-decoration:none; }
     .back a:hover { color:var(--ink); }
+    .brands { margin-top:18px; text-align:center; }
+    .brand-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:10px; }
+    .brand { display:inline-flex; align-items:center; justify-content:center; background:#fff;
+      border:1px solid var(--line); border-radius:10px; padding:8px 14px; height:52px;
+      transition:transform .15s ease, border-color .15s ease; }
+    .brand:hover { transform:translateY(-2px); border-color:#57503f; }
+    .brand img { height:28px; width:auto; max-width:120px; object-fit:contain; }
   </style>
 </head>
 <body>
@@ -290,6 +297,18 @@
     </nav>
     <main id="contenuto">
     <p class="back"><a href="./">← Torna alla home</a></p>
+    <div class="brands">
+      <p class="kicker">[ marchi consigliati per le build ]</p>
+      <div class="brand-row">
+        <a class="brand" href="https://www.amd.com/" target="_blank" rel="noopener" title="AMD"><img src="./brands/amd.png" alt="AMD Ryzen" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.asus.com/" target="_blank" rel="noopener" title="ASUS"><img src="./brands/asus.png" alt="ASUS" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.msi.com/" target="_blank" rel="noopener" title="MSI"><img src="./brands/msi.png" alt="MSI" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.nvidia.com/" target="_blank" rel="noopener" title="NVIDIA"><img src="./brands/nvidia.png" alt="NVIDIA" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.corsair.com/" target="_blank" rel="noopener" title="Corsair"><img src="./brands/corsair.png" alt="Corsair" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.samsung.com/" target="_blank" rel="noopener" title="Samsung"><img src="./brands/samsung.png" alt="Samsung" loading="lazy" width="120" height="28"></a>
+        <a class="brand" href="https://www.kingston.com/" target="_blank" rel="noopener" title="Kingston"><img src="./brands/kingston.png" alt="Kingston" loading="lazy" width="120" height="28"></a>
+      </div>
+    </div>
 <section id="build">
       <p class="kicker">[ 04 — build ]</p>
       <h2>Build AMD + ASUS / MSI</h2>

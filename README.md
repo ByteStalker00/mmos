@@ -67,6 +67,7 @@ Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere c
 | `guide.html` / `build.html` / `listino.html` / `usato.html` | Pagine dedicate (stesso head/CSS/nav/footer) |
 | `mmos.js` | Tema, particelle, drawer Spotify, chat + IA, anti-tasto-destro (`?v=8` anti-cache) |
 | `logo-cropped.png` | Logo in navbar, chat e footer |
+| `brands/` | Loghi marchi consigliati (pagina Build) |
 | `og-cover.jpg` | Immagine anteprima condivisioni 1200×630 |
 | `favicon.ico` / `favicon-180.png` | Icone browser e Apple |
 
