@@ -63,8 +63,9 @@ Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere c
 
 | File | Uso |
 |---|---|
-| `index.html` | Tutta la pagina (HTML + CSS inline) |
-| `mmos.js` | Tema, particelle, drawer Spotify, chat, anti-tasto-destro (`?v=2` anti-cache) |
+| `index.html` | Home: hero, servizi, portfolio, FAQ, Discord (HTML + CSS inline) |
+| `guide.html` / `build.html` / `listino.html` / `usato.html` | Pagine dedicate (stesso head/CSS/nav/footer) |
+| `mmos.js` | Tema, particelle, drawer Spotify, chat + IA, anti-tasto-destro (`?v=8` anti-cache) |
 | `logo-cropped.png` | Logo in navbar, chat e footer |
 | `og-cover.jpg` | Immagine anteprima condivisioni 1200×630 |
 | `favicon.ico` / `favicon-180.png` | Icone browser e Apple |
@@ -75,7 +76,7 @@ Nessuna build: modificare, validare e pushare su `main`.
 
 ```powershell
 node --check mmos.js
-git add index.html mmos.js
+git add index.html mmos.js guide.html build.html listino.html usato.html
 git commit -m "Descrizione"
 git push origin main
 ```

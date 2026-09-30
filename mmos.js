@@ -152,13 +152,13 @@
         { k: ['dove', 'zona', 'zone', 'san benedetto', 'porto', 'ascoli', 'domicilio', 'raggiung', 'venite', 'sede'],
           a: 'Opero in studio e a domicilio solo a <b>Porto d\u2019Ascoli e San Benedetto del Tronto</b>. Da remoto ovunque, ma solo ottimizzazione e debug.' },
         { k: ['prezzo', 'prezzi', 'costo', 'costi', 'tariff', 'quanto', 'pagare', 'listino'],
-          a: 'Installazione SO €48 · Ripristino, primo avvio, programmi, pulizia €34 · Virus €41 · Backup/trasferimento da €34 · Online €21/h · Uscita €21 · Privati €21/h · Aziende €28/h. Dettagli in <a href="#listino">Listino</a>.' },
+          a: 'Installazione SO €48 · Ripristino, primo avvio, programmi, pulizia €34 · Virus €41 · Backup/trasferimento da €34 · Online €21/h · Uscita €21 · Privati €21/h · Aziende €28/h. Dettagli in <a href="listino.html">Listino</a>.' },
         { k: ['build', 'assembl', 'computer nuovo', 'pc nuovo', 'pc gaming', 'gaming', 'configura'],
-          a: 'Build 1080p, 2K, 4K e top di gamma RTX 5090 in <a href="#build">Build</a>. Da privato non vendo pezzi: ti dico cosa comprare, tu acquisti, io assemblo e testo.' },
+          a: 'Build 1080p, 2K, 4K e top di gamma RTX 5090 in <a href="build.html">Build</a>. Da privato non vendo pezzi: ti dico cosa comprare, tu acquisti, io assemblo e testo.' },
         { k: ['remoto', 'distanza', 'online', 'teamviewer', 'da casa'],
           a: 'Da remoto faccio solo <b>ottimizzazione e debug software</b> (€21/h): pulizia, avvio, errori e rallentamenti. Niente formattazioni a distanza.' },
         { k: ['virus', 'malware', 'sicurezza', 'hacker', 'popup', 'antivirus'],
-          a: 'Rimozione virus €41 con analisi e protezione. Consigli base in <a href="#guide">Guide</a>: aggiornamenti, allegati sospetti, password diverse.' },
+          a: 'Rimozione virus €41 con analisi e protezione. Consigli base in <a href="guide.html">Guide</a>: aggiornamenti, allegati sospetti, password diverse.' },
         { k: ['lento', 'lentezza', 'avvio', 'veloc', 'ssd', 'impiega'],
           a: 'Pulizia e ottimizzazione avvio €34. Se il disco è meccanico, un SSD cambia più di qualsiasi pulizia: chiedimi un preventivo.' },
         { k: ['backup', 'dati', 'foto', 'documenti', 'persi', 'recuper'],
@@ -168,7 +168,7 @@
         { k: ['programmi', 'installare', 'software', 'office', 'primo avvio', 'nuovo pc'],
           a: 'Primo avvio e installazione programmi €34 con test finale.' },
         { k: ['usato', 'seconda mano', 'ricondizionat'],
-          a: 'La sezione <a href="#usato">Usato</a> arriva a breve: pezzi testati, con noi come tramite col venditore.' },
+          a: 'La sezione <a href="usato.html">Usato</a> arriva a breve: pezzi testati, con noi come tramite col venditore.' },
         { k: ['whatsapp'],
           a: 'Tocca il tasto verde qui sotto: si apre WhatsApp al 375 523 6202 con la tua domanda già scritta.' },
         { k: ['facebook', 'contatto', 'contatti', 'telefono', 'chiamare', 'chiamata', 'scrivere', 'parlare', 'prenotare', 'appuntamento'],
@@ -292,56 +292,4 @@
       }
       tab.addEventListener('click', function () { set(true); });
       if (close) close.addEventListener('click', function () { set(false); });
-    })();
-    (function () {
-      var backdrop = document.getElementById('modalBackdrop');
-      var body = document.getElementById('modalBody');
-      var title = document.getElementById('modalTitle');
-      var closeBtn = document.getElementById('modalClose');
-      if (!backdrop || !body || !title || !closeBtn) return;
-      var IDS = ['guide', 'build', 'listino', 'usato'];
-      var home = {};
-      function restore() {
-        var sec = body.querySelector('section');
-        if (sec && home[sec.id]) {
-          home[sec.id].parent.insertBefore(sec, home[sec.id].next);
-          delete home[sec.id];
-        }
-      }
-      function open(id) {
-        if (IDS.indexOf(id) === -1) return false;
-        var sec = document.getElementById(id);
-        if (!sec) return false;
-        restore();
-        home[id] = { parent: sec.parentNode, next: sec.nextSibling };
-        var h = sec.querySelector('h2');
-        title.textContent = h ? h.textContent : id;
-        body.appendChild(sec);
-        backdrop.hidden = false;
-        document.body.style.overflow = 'hidden';
-        body.parentNode.scrollTop = 0;
-        closeBtn.focus();
-        return true;
-      }
-      function close() {
-        restore();
-        backdrop.hidden = true;
-        document.body.style.overflow = '';
-      }
-      document.addEventListener('click', function (e) {
-        var t = e.target;
-        var a = (t && t.closest) ? t.closest('a[href^="#"]') : null;
-        if (!a) return;
-        var id = a.getAttribute('href').slice(1);
-        if (id && IDS.indexOf(id) !== -1 && document.getElementById(id)) {
-          e.preventDefault();
-          open(id);
-        }
-      });
-      closeBtn.addEventListener('click', function () { close(); });
-      backdrop.addEventListener('click', function (e) { if (e.target === backdrop) close(); });
-      document.addEventListener('keydown', function (e) {
-        if ((e.key === 'Escape' || e.key === 'Esc') && !backdrop.hidden) close();
-      });
-      if (location.hash) open(location.hash.slice(1));
     })();
