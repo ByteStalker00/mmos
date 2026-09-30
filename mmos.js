@@ -168,7 +168,7 @@
         { k: ['programmi', 'installare', 'software', 'office', 'primo avvio', 'nuovo pc'],
           a: 'Primo avvio e installazione programmi €34 con test finale.' },
         { k: ['usato', 'seconda mano', 'ricondizionat'],
-          a: 'La sezione <a href="#usato">Usato</a> arriva a breve: pezzi testati, acquisto con contatto diretto col venditore.' },
+          a: 'La sezione <a href="#usato">Usato</a> arriva a breve: pezzi testati, con noi come tramite col venditore.' },
         { k: ['whatsapp'],
           a: 'Tocca il tasto verde qui sotto: si apre WhatsApp al 375 523 6202 con la tua domanda già scritta.' },
         { k: ['facebook', 'contatto', 'contatti', 'telefono', 'chiamare', 'chiamata', 'scrivere', 'parlare', 'prenotare', 'appuntamento'],
