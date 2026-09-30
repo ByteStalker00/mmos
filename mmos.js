@@ -287,7 +287,7 @@
         tab.style.display = open ? 'none' : '';
         if (open) {
           var frame = panel.querySelector('iframe');
-          if (frame && !frame.getAttribute('src')) frame.setAttribute('src', SPOTIFY_SRC + '&autoplay=1');
+          if (frame && !frame.getAttribute('src')) frame.setAttribute('src', SPOTIFY_SRC);
         }
       }
       tab.addEventListener('click', function () { set(true); });
