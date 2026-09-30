@@ -293,3 +293,55 @@
       tab.addEventListener('click', function () { set(true); });
       if (close) close.addEventListener('click', function () { set(false); });
     })();
+    (function () {
+      var backdrop = document.getElementById('modalBackdrop');
+      var body = document.getElementById('modalBody');
+      var title = document.getElementById('modalTitle');
+      var closeBtn = document.getElementById('modalClose');
+      if (!backdrop || !body || !title || !closeBtn) return;
+      var IDS = ['guide', 'build', 'listino', 'usato'];
+      var home = {};
+      function restore() {
+        var sec = body.querySelector('section');
+        if (sec && home[sec.id]) {
+          home[sec.id].parent.insertBefore(sec, home[sec.id].next);
+          delete home[sec.id];
+        }
+      }
+      function open(id) {
+        if (IDS.indexOf(id) === -1) return false;
+        var sec = document.getElementById(id);
+        if (!sec) return false;
+        restore();
+        home[id] = { parent: sec.parentNode, next: sec.nextSibling };
+        var h = sec.querySelector('h2');
+        title.textContent = h ? h.textContent : id;
+        body.appendChild(sec);
+        backdrop.hidden = false;
+        document.body.style.overflow = 'hidden';
+        body.parentNode.scrollTop = 0;
+        closeBtn.focus();
+        return true;
+      }
+      function close() {
+        restore();
+        backdrop.hidden = true;
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        var a = (t && t.closest) ? t.closest('a[href^="#"]') : null;
+        if (!a) return;
+        var id = a.getAttribute('href').slice(1);
+        if (id && IDS.indexOf(id) !== -1 && document.getElementById(id)) {
+          e.preventDefault();
+          open(id);
+        }
+      });
+      closeBtn.addEventListener('click', function () { close(); });
+      backdrop.addEventListener('click', function (e) { if (e.target === backdrop) close(); });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.key === 'Esc') && !backdrop.hidden) close();
+      });
+      if (location.hash) open(location.hash.slice(1));
+    })();
