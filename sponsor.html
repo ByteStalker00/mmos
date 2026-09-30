@@ -265,10 +265,21 @@
     .discord-wrap { display:flex; justify-content:center; margin-top:14px; }
     .discord-wrap iframe { border:0; border-radius:12px; max-width:100%; background:var(--card); }
   
+    .tile.sponsor { position:relative; overflow:hidden; }
+    .tile.sponsor::before { content:""; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,#f6c453,#c92a30,#3d4a7a); }
     .sponsor .num { font-family:var(--mono); font-size:12px; color:#fff; background:var(--red); border-radius:6px; padding:2px 8px; }
-    .sponsor-top { display:flex; align-items:center; gap:12px; margin:8px 0 10px; }
-    .sponsor-logo { height:56px; width:auto; background:#fff; border:1px solid var(--line); border-radius:10px; padding:6px 10px; }
-    .sponsor-top b { margin:0; font-size:18px; }
+    .sponsor-top { display:flex; align-items:center; gap:14px; margin:10px 0 12px; }
+    .sponsor-logo { height:72px; width:auto; background:#fff; border:1px solid var(--line); border-radius:14px;
+      padding:8px 12px; box-shadow:0 0 0 2px rgba(246,196,83,.35), 0 8px 24px rgba(0,0,0,.35); }
+    .sponsor-top b { margin:0; font-size:20px; }
+    .visit { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#f6c453,#dd8f13);
+      color:#241500; font-weight:700; font-size:14px; padding:9px 18px; border-radius:12px;
+      text-decoration:none; border:1px solid #b96f0a; box-shadow:0 4px 16px rgba(221,143,19,.35);
+      transition:transform .15s ease, filter .15s ease; }
+    .visit:hover { filter:brightness(1.08); transform:translateY(-2px); }
+    .visit .arr { display:inline-block; transition:transform .2s ease; }
+    .visit:hover .arr { transform:translate(2px,-2px); }
   </style>
 </head>
 <body>
@@ -303,7 +314,7 @@
       <h2>Sponsor</h2>
       <p class="sec-sub">I marchi che sostengono MMOS • Assistenza Privata.</p>
       <div class="grid">
-        <div class="tile sponsor"><div class="th"><span class="num">Sponsor n. 1</span></div><div class="sponsor-top"><img class="sponsor-logo" src="./brands/galibank.png" alt="Logo GaliBank" loading="lazy" width="120" height="56"><b>GaliBank · NAT9481</b></div><p>La storia: GaliBank, con il suo simbolo NAT9481, è un’avventura nel mondo delle criptovalute legata a GALILEOLTD e alla Community Galileo. Più che una semplice valuta, offre ai giocatori un’esperienza unica nell’universo di Star Citizen.</p><ul><li>Scambi virtuali e trasferimenti rapidi tra giocatori.</li><li>Servizi premium, eventi speciali e ricompense esclusive.</li><li>Piattaforma sicura per la community Galileo Corporation.</li><li>Nota: fa parte dell’ecosistema immaginario di Moroboshi — strumento di gioco, non investimento speculativo.</li></ul><a class="btn ghost" href="https://www.galibankonline.org/" target="_blank" rel="noopener">Visita il sito <span class="arr" aria-hidden="true">↗</span></a></div>
+        <div class="tile sponsor"><div class="th"><span class="num">Sponsor n. 1</span></div><div class="sponsor-top"><img class="sponsor-logo" src="./brands/galibank.png" alt="Logo GaliBank" loading="lazy" width="120" height="56"><b>GaliBank · NAT9481</b></div><p>La storia: GaliBank, con il suo simbolo NAT9481, è un’avventura nel mondo delle criptovalute legata a GALILEOLTD e alla Community Galileo. Più che una semplice valuta, offre ai giocatori un’esperienza unica nell’universo di Star Citizen.</p><ul><li>Scambi virtuali e trasferimenti rapidi tra giocatori.</li><li>Servizi premium, eventi speciali e ricompense esclusive.</li><li>Piattaforma sicura per la community Galileo Corporation.</li><li>Nota: fa parte dell’ecosistema immaginario di Moroboshi — strumento di gioco, non investimento speculativo.</li></ul><a class="visit" href="https://www.galibankonline.org/" target="_blank" rel="noopener">Visita il sito <span class="arr" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     </main>
