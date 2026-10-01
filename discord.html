@@ -264,10 +264,30 @@
     .os.mob { background:rgba(29,185,84,.13); border-color:rgba(29,185,84,.45); color:var(--ink); }
     .kbd { font-family:var(--mono); font-size:11.5px; background:var(--paper); border:1px solid var(--line); border-bottom-width:2px; border-radius:6px; padding:1px 6px; white-space:nowrap; }
     .tile.hero-tile { border:1px solid rgba(88,101,242,.55); box-shadow:0 0 0 1px rgba(88,101,242,.25), 0 8px 24px rgba(88,101,242,.12); }
+    .guide-hero { background:linear-gradient(135deg,#5865f2,#4048c8 60%,#2b3178); border-radius:16px; padding:22px 20px; color:#fff; margin:0 0 16px; box-shadow:0 12px 32px rgba(88,101,242,.25); }
+    .guide-hero .kicker { color:rgba(255,255,255,.75); }
+    .guide-hero h2 { color:#fff; }
+    .guide-hero .sec-sub { color:rgba(255,255,255,.88); margin:0; }
+    .guide-hero a { color:#fff; text-decoration:underline; text-underline-offset:2px; }
+    .step { position:relative; overflow:hidden; }
+    .step::after { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#5865f2,#9b5cf6,#1db954); }
+    .step-n { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,#5865f2,#9b5cf6); color:#fff; font-family:var(--mono); font-weight:700; font-size:14px; margin-bottom:10px; box-shadow:0 4px 12px rgba(88,101,242,.35); }
+    .tile.win { border-left:3px solid #1877f2; }
+    .tile.mob { border-left:3px solid #1db954; }
+    .tile ul { list-style:none; margin:8px 0 0; padding:0; }
+    .tile ul li { position:relative; padding-left:22px; margin:7px 0; }
+    .tile ul li::before { content:"✓"; position:absolute; left:0; top:0; color:#1db954; font-weight:700; }
+    .tile.hero-tile ul li::before { color:#5865f2; }
+    .tile.win ul li::before { color:#1877f2; }
     .doc-links { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
-    .doc-links a { font-family:var(--mono); font-size:11.5px; color:var(--muted); text-decoration:none; border:1px solid var(--line); background:var(--card); padding:5px 12px; border-radius:20px; }
-    .doc-links a:hover { color:var(--ink); border-color:var(--fb); }
-    details.tile summary { cursor:pointer; font-weight:700; font-size:15px; }
+    .doc-links a { font-family:var(--mono); font-size:11.5px; color:var(--ink); text-decoration:none; border:1px solid var(--line); background:var(--card); padding:6px 14px; border-radius:20px; transition:transform .15s ease, border-color .15s ease, box-shadow .2s ease; }
+    .doc-links a:hover { color:var(--ink); border-color:#5865f2; transform:translateY(-2px); box-shadow:0 6px 16px rgba(88,101,242,.25); }
+    details.tile { padding:0; overflow:hidden; }
+    details.tile summary { cursor:pointer; font-weight:700; font-size:15px; padding:16px; list-style:none; display:flex; align-items:center; gap:8px; }
+    details.tile summary::-webkit-details-marker { display:none; }
+    details.tile summary::after { content:"+"; margin-left:auto; width:24px; height:24px; flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--line); border-radius:50%; color:var(--muted); font-weight:400; transition:transform .2s ease; }
+    details.tile[open] summary::after { content:"–"; transform:rotate(180deg); border-color:#5865f2; color:var(--ink); }
+    details.tile > div:last-child { padding:0 16px 16px; }
     details.tile .kbd-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px dashed var(--line); font-size:13.5px; color:var(--body); }
     details.tile .kbd-row:last-child { border-bottom:none; }
   
@@ -310,23 +330,25 @@
         <a class="btn discord" href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">Entra nel server</a>
       </div>
       <div class="grid cols3">
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>1 · Installa su PC</b></div><ul><li>Vai su <a href="https://discord.com/download" target="_blank" rel="noopener">discord.com/download</a>.</li><li>Scarica per Windows e avvia il file.</li><li>Crea un account o accedi.</li></ul></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>2 · Installa su telefono</b></div><ul><li>Apri Play Store o App Store.</li><li>Cerca “Discord” e installa.</li><li>Accedi con lo stesso account.</li></ul></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>3 · Entra in MMOS</b></div><ul><li>Tocca <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">l’invito MMOS</a>.</li><li>Premi “Accetta l’invito”.</li><li>Presentati e scrivi la tua domanda.</li></ul></div>
+        <div class="tile step"><span class="step-n">1</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Installa su PC</b></div><ul><li>Vai su <a href="https://discord.com/download" target="_blank" rel="noopener">discord.com/download</a>.</li><li>Scarica per Windows e avvia il file.</li><li>Crea un account o accedi.</li></ul></div>
+        <div class="tile step"><span class="step-n">2</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Installa su telefono</b></div><ul><li>Apri Play Store o App Store.</li><li>Cerca “Discord” e installa.</li><li>Accedi con lo stesso account.</li></ul></div>
+        <div class="tile step"><span class="step-n">3</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Entra in MMOS</b></div><ul><li>Tocca <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">l’invito MMOS</a>.</li><li>Premi “Accetta l’invito”.</li><li>Presentati e scrivi la tua domanda.</li></ul></div>
       </div>
       <div class="discord-wrap">
         <iframe src="https://discord.com/widget?id=1377348650262335498&theme=dark" width="350" height="500" style="border:0" title="Widget Discord MMOS" loading="lazy" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       </div>
     </section>
     <section id="guida-uso">
+      <div class="guide-hero">
       <p class="kicker">[ guida completa — windows e mobile ]</p>
       <h2>Come usare Discord: canali e messaggi</h2>
       <p class="sec-sub">Testuali con <b>#</b>, vocali con l’altoparlante. Sintesi verificata dalla documentazione ufficiale Discord (link in fondo).</p>
+      </div>
       <div class="grid cols2">
-        <div class="tile"><span class="os win">▣ Windows · app e browser</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Navigare tra i canali</b></div><ul><li>Colonna sinistra: clicca un <b>#testuale</b> per leggerlo, clicca un <b>vocale</b> per entrarci subito, senza squilli. Lucchetto = senza permesso.</li><li>Passa veloce: <span class="kbd">Ctrl</span> + <span class="kbd">K</span> per saltare a server, canali e DM · <span class="kbd">Alt</span> + <span class="kbd">↑</span><span class="kbd">↓</span> per cambiare canale · <span class="kbd">Esc</span> segna il canale come letto.</li><li>Cerca: <span class="kbd">Ctrl</span> + <span class="kbd">F</span> nel canale, <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">F</span> ovunque.</li></ul></div>
-        <div class="tile"><span class="os win">▣ Windows · vocale e audio</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Entrare, parlare, uscire</b></div><ul><li>In basso a sinistra: microfono per mutarti, cuffia per non sentire, telefono per uscire.</li><li>Scorciatoie: <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">M</span> microfono · <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">D</span> audio · <span class="kbd">Ctrl</span> + <span class="kbd">/</span> tutte le scorciatoie.</li><li>Audio pulito: ingranaggio in basso &gt; Voce e video &gt; input/output giusti, soppressione rumore e cancellazione eco attive.</li></ul></div>
-        <div class="tile"><span class="os mob">◉ Mobile · app Android e iOS</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Navigare tra i canali</b></div><ul><li>Barra in basso: Home, Messaggi/DM, campana Notifiche, icona Profilo con ingranaggio Impostazioni.</li><li>Entra con link d’invito oppure col <b>+</b> verde a sinistra &gt; Unisciti a un server &gt; incolla il link.</li><li>Le 3 lineette in alto aprono i canali: tocca un <b>#testuale</b> o un <b>vocale</b> per entrare. Lucchetto = senza permesso.</li></ul></div>
-        <div class="tile"><span class="os mob">◉ Mobile · vocale e audio</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Parlare e gestire l’audio</b></div><ul><li>Dentro il vocale tocca lo schermo: menu in basso con microfono, videocamera, condivisione ed Esci.</li><li>Scorri dal basso &gt; Cambia uscita audio &gt; <b>Altoparlante</b> per il vivavoce; icona telefono in basso a destra per chiudere.</li><li>Chat senza uscire: fumetto <b>Apri chat</b> nel menu in basso, come su PC in alto a destra.</li></ul></div>
+        <div class="tile win"><span class="os win">▣ Windows · app e browser</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Navigare tra i canali</b></div><ul><li>Colonna sinistra: clicca un <b>#testuale</b> per leggerlo, clicca un <b>vocale</b> per entrarci subito, senza squilli. Lucchetto = senza permesso.</li><li>Passa veloce: <span class="kbd">Ctrl</span> + <span class="kbd">K</span> per saltare a server, canali e DM · <span class="kbd">Alt</span> + <span class="kbd">↑</span><span class="kbd">↓</span> per cambiare canale · <span class="kbd">Esc</span> segna il canale come letto.</li><li>Cerca: <span class="kbd">Ctrl</span> + <span class="kbd">F</span> nel canale, <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">F</span> ovunque.</li></ul></div>
+        <div class="tile win"><span class="os win">▣ Windows · vocale e audio</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Entrare, parlare, uscire</b></div><ul><li>In basso a sinistra: microfono per mutarti, cuffia per non sentire, telefono per uscire.</li><li>Scorciatoie: <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">M</span> microfono · <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">D</span> audio · <span class="kbd">Ctrl</span> + <span class="kbd">/</span> tutte le scorciatoie.</li><li>Audio pulito: ingranaggio in basso &gt; Voce e video &gt; input/output giusti, soppressione rumore e cancellazione eco attive.</li></ul></div>
+        <div class="tile mob"><span class="os mob">◉ Mobile · app Android e iOS</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Navigare tra i canali</b></div><ul><li>Barra in basso: Home, Messaggi/DM, campana Notifiche, icona Profilo con ingranaggio Impostazioni.</li><li>Entra con link d’invito oppure col <b>+</b> verde a sinistra &gt; Unisciti a un server &gt; incolla il link.</li><li>Le 3 lineette in alto aprono i canali: tocca un <b>#testuale</b> o un <b>vocale</b> per entrare. Lucchetto = senza permesso.</li></ul></div>
+        <div class="tile mob"><span class="os mob">◉ Mobile · vocale e audio</span><div class="th"><span class="mk" aria-hidden="true"></span><b>Parlare e gestire l’audio</b></div><ul><li>Dentro il vocale tocca lo schermo: menu in basso con microfono, videocamera, condivisione ed Esci.</li><li>Scorri dal basso &gt; Cambia uscita audio &gt; <b>Altoparlante</b> per il vivavoce; icona telefono in basso a destra per chiudere.</li><li>Chat senza uscire: fumetto <b>Apri chat</b> nel menu in basso, come su PC in alto a destra.</li></ul></div>
         <div class="tile hero-tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Messaggi: inviare e gestire</b></div><ul><li>Scrivi in basso e Invio (PC) o freccia (mobile). <b>+</b> per foto e file, faccina per emoji, GIF e sticker. Limite 2000 caratteri.</li><li>PC: passa sopra un messaggio per Rispondi, Reazione, Modifica ed Elimina (solo i tuoi, <span class="kbd">Shift</span> + <span class="kbd">↑</span> modifica l’ultimo). Mobile: tieni premuto.</li><li><b>@nome</b> menziona e notifica, pallino rosso = menzione, grigio = nuovi messaggi.</li></ul></div>
         <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Notifiche senza stress</b></div><ul><li>PC: nome server &gt; Impostazioni notifiche &gt; Tutti / Solo menzioni / Niente; tasto destro sul canale &gt; Notifiche per l’eccezione.</li><li>Mobile: nome server &gt; icona campana, oppure pressione lunga sul canale &gt; Notifiche. Puoi silenziare server o canale a tempo.</li><li>Consiglio MMOS: tieni Tutto solo per assistenza e annunci, il resto su Menzioni.</li></ul></div>
       </div>
