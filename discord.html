@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src https://text.pollinations.ai; frame-src https://open.spotify.com https://discord.com; object-src 'none'; base-uri 'self'; form-action 'none';">
-  <title>MMOS • Assistenza Privata</title>
-  <meta name="description" content="Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.">
+  <title>Discord — MMOS • Assistenza Privata</title>
+  <meta name="description" content="Entra nel server Discord MMOS: assistenza, domande e aggiornamenti. Guida rapida per installare Discord su PC e telefono.">
   <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="apple-touch-icon" href="./favicon-180.png">
 
@@ -14,9 +14,9 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="MMOS • Assistenza Privata">
   <meta name="theme-color" content="#161310">
-  <meta property="og:title" content="MMOS • Assistenza Privata">
-  <meta property="og:description" content="Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.">
-  <meta property="og:url" content="https://bytestalker00.github.io/mmos/">
+  <meta property="og:title" content="Discord — MMOS • Assistenza Privata">
+  <meta property="og:description" content="Entra nel server Discord MMOS: assistenza, domande e aggiornamenti. Guida rapida per installare Discord su PC e telefono.">
+  <meta property="og:url" content="https://bytestalker00.github.io/mmos/discord.html">
   <meta property="og:image" content="https://bytestalker00.github.io/mmos/og-cover.jpg">
   <meta property="og:image:secure_url" content="https://bytestalker00.github.io/mmos/og-cover.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -24,11 +24,11 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Logo MMOS">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MMOS • Assistenza Privata">
-  <meta name="twitter:description" content="Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.">
+  <meta name="twitter:title" content="Discord — MMOS • Assistenza Privata">
+  <meta name="twitter:description" content="Entra nel server Discord MMOS: assistenza, domande e aggiornamenti. Guida rapida per installare Discord su PC e telefono.">
   <meta name="twitter:image" content="https://bytestalker00.github.io/mmos/og-cover.jpg">
 
-  <link rel="canonical" href="https://bytestalker00.github.io/mmos/">
+  <link rel="canonical" href="https://bytestalker00.github.io/mmos/discord.html">
   <style>
     :root {
       --paper:#161310; --card:#221e19; --ink:#f1ecec; --muted:#a8a29a;
@@ -114,12 +114,7 @@
       .btn.nav { font-size:0; gap:0; padding:5px 6px; min-width:0; }
       .btn.nav svg { width:12px; height:12px; }
     }
-    .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line);
-      font-size:16px; padding:12px 24px;
-      transition:transform .15s ease, border-color .15s ease, box-shadow .2s ease; }
-    .btn.ghost:hover { transform:translateY(-2px); border-color:var(--fb); box-shadow:0 6px 18px rgba(0,0,0,.25); }
-    .btn.ghost .arr { display:inline-block; transition:transform .2s ease; }
-    .btn.ghost:hover .arr { transform:translateY(3px); }
+    .btn.ghost { background:var(--card); color:var(--ink); border:1px solid var(--line); }
     /* terminal */
     .term { margin:30px auto 0; max-width:100%; background:#0e0d0c; color:#f1ecec;
       border:1px solid var(--term-border); border-radius:12px; overflow:hidden; text-align:left;
@@ -264,12 +259,16 @@
     .music-panel iframe { display:block; border:0; }
     .discord-wrap { display:flex; justify-content:center; margin-top:14px; }
     .discord-wrap iframe { border:0; border-radius:12px; max-width:100%; background:var(--card); }
+  
+    .back { font-family:var(--mono); font-size:12px; margin:20px 0 0; }
+    .back a { display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg,#2f7cf6,#0e56bd); color:#fff; font-weight:700; padding:7px 16px; border-radius:20px; text-decoration:none; border:1px solid #0e56bd; box-shadow:0 4px 14px rgba(21,101,216,.35); transition:transform .15s ease, filter .15s ease; }
+    .back a:hover { color:#fff; filter:brightness(1.12); transform:translateX(-3px); }
   </style>
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
   <div class="wrap">
-    <nav>
+<nav>
       <a class="logo" href="./" aria-label="MMOS - ricarica la pagina"><img src="./logo-cropped.png" alt="MMOS" width="152" height="50"></a>
       <div class="nav-links">
         <a href="bio.html">Biografia</a>
@@ -291,81 +290,19 @@
       <a class="btn nav github" href="https://github.com/ByteStalker00" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
       </div>
     </nav>
-
     <main id="contenuto">
-    <div class="hero">
-      <p class="eyebrow">[ assistenza privata — <a href="https://www.google.com/maps/search/?api=1&amp;query=Porto+d%27Ascoli+San+Benedetto+del+Tronto" target="_blank" rel="noopener">porto d'ascoli</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=San+Benedetto+del+Tronto" target="_blank" rel="noopener">san benedetto del tronto</a> ]</p>
-      <h1><span class="m1">M</span><span class="m2">M</span>OS • Assistenza Privata</h1>
-      <p class="lede">Offro servizi di formattazione e ottimizzazione PC in studio e a domicilio, esclusivamente nella zona di Porto d'Ascoli e San Benedetto del Tronto. Da remoto eseguo unicamente interventi di ottimizzazione e debug.</p>
-      <div class="cta-row">
-        <a class="btn ghost" href="./#servizi">Vedi i servizi <span class="arr" aria-hidden="true">↓</span></a>
-      </div>
-      <div class="term" aria-hidden="true">
-        <div class="term-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="term-title">mmos — zsh</span></div>
-<pre><span class="p">$</span> diagnosi del problema
-<span class="p">$</span> preventivo chiaro, senza sorprese
-<span class="p">$</span> intervento in studio, a domicilio o da remoto <span class="cursor"></span></pre>
-      </div>
-      <div class="grid cols3 strip">
-        <div class="tile"><span class="n">[ zona ]</span><b>Solo SBT e Porto d'Ascoli</b><p>Studio e domicilio esclusivamente in zona. Niente trasferte infinite.</p></div>
-        <div class="tile"><span class="n">[ preventivo ]</span><b>Diagnosi chiara, senza sorprese</b><p>Sai prima cosa si fa e quanto costa il servizio. Gratis il primo contatto.</p></div>
-        <div class="tile"><span class="n">[ build ]</span><b>Assemblaggio su misura</b><p>Ti dico cosa comprare, tu acquisti, io assemblo e testo tutto.</p></div>
-      </div>
-    </div>
-
-    <section id="servizi">
-      <p class="kicker">[ 01 — servizi ]</p>
-      <h2>Dove e come intervengo</h2>
-      <div class="grid cols3">
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>In studio</b></div><p>Formattazione completa: backup dati, reinstallazione pulita, driver e programmi essenziali.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>A domicilio</b></div><p>Interventi a casa o in ufficio, solo a Porto d'Ascoli e San Benedetto del Tronto.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Da remoto</b></div><p>Unicamente interventi software: pulizia, avvio, errori e rallentamenti.</p></div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <p class="kicker">[ 02 — portfolio ]</p>
-      <h2>Esempi di intervento</h2>
-      <p class="sec-sub">Lavori tipici che eseguo.</p>
-      <div class="grid cols2">
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Pulizia e formattazione</b></div><p>PC lento rimesso a nuovo con installazione pulita e avvio in pochi secondi.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Upgrade SSD e RAM</b></div><p>Sostituzione disco con SSD e aumento memoria per dare nuova vita al PC.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Rimozione malware</b></div><p>Pulizia da virus, popup e programmi indesiderati con messa in sicurezza.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Ottimizzazione avvio</b></div><p>Rimozione programmi inutili all'avvio e configurazione per la massima fluidità.</p></div>
-      </div>
-    </section>
-
-    
-
-    
-
-    
-
-    
-
-    <section id="faq">
-      <p class="kicker">[ 07 — faq ]</p>
-      <h2>Domande frequenti</h2>
-      <div class="grid" style="margin-top:14px;">
-        <details class="tile"><summary>In quali zone operate?</summary><p>Solo Porto d'Ascoli e San Benedetto del Tronto per studio e domicilio; da remoto ovunque, ma solo ottimizzazione e debug.</p></details>
-        <details class="tile"><summary>Cosa fate da remoto?</summary><p>Unicamente interventi software: pulizia, ottimizzazione avvio, risoluzione errori e rallentamenti. Niente formattazioni a distanza.</p></details>
-        <details class="tile"><summary>Devo fare il backup prima?</summary><p>Sì, sempre. Se non sai come farlo, lo facciamo insieme prima dell'intervento.</p></details>
-        <details class="tile"><summary>Quanto costa una build?</summary><p>Essendo un privato non vendo componenti: ti consiglio io quali articoli acquistare, tu li compri, e io li assemblo con installazione di OS, driver, ottimizzazione e test finali. Paghi solo il servizio: contattami su <a href="https://www.facebook.com/profile.php?id=61594506196534" target="_blank" rel="noopener">Facebook</a> per un preventivo senza impegno.</p></details>
-      </div>
-    </section>
-
-    <section id="discord">
+    <p class="back"><a href="./">← Torna alla home</a></p>
+<section id="discord">
       <p class="kicker">[ 08 — discord ]</p>
       <h2>Unisciti su Discord</h2>
-      <p class="sec-sub">Entra nel server per assistenza, domande e aggiornamenti. Non hai Discord? Si installa in 1 minuto:</p>
-      <div class="grid cols3">
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>PC</b></div><p>Scarica da <a href="https://discord.com/download" target="_blank" rel="noopener">discord.com/download</a>, installa e crea un account.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Telefono</b></div><p>Installa “Discord” da Play Store o App Store e accedi.</p></div>
-        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>Entra</b></div><p>Apri <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">l’invito MMOS</a>, premi “Accetta l’invito” e scrivi la tua domanda.</p></div>
-      </div>
-      <div class="cta-row" style="margin-top:16px;">
+      <p class="sec-sub">Entra nel server per assistenza, domande e aggiornamenti.</p>
+      <div class="cta-row" style="justify-content:flex-start;margin:0 0 16px;">
         <a class="btn discord" href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">Entra nel server</a>
-        <a class="btn ghost" href="discord.html">Apri la scheda Discord</a>
+      </div>
+      <div class="grid cols3">
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>1 · Installa su PC</b></div><ul><li>Vai su <a href="https://discord.com/download" target="_blank" rel="noopener">discord.com/download</a>.</li><li>Scarica per Windows e avvia il file.</li><li>Crea un account o accedi.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>2 · Installa su telefono</b></div><ul><li>Apri Play Store o App Store.</li><li>Cerca “Discord” e installa.</li><li>Accedi con lo stesso account.</li></ul></div>
+        <div class="tile"><div class="th"><span class="mk" aria-hidden="true"></span><b>3 · Entra in MMOS</b></div><ul><li>Tocca <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">l’invito MMOS</a>.</li><li>Premi “Accetta l’invito”.</li><li>Presentati e scrivi la tua domanda.</li></ul></div>
       </div>
       <div class="discord-wrap">
         <iframe src="https://discord.com/widget?id=1377348650262335498&theme=dark" width="350" height="500" style="border:0" title="Widget Discord MMOS" loading="lazy" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
@@ -374,7 +311,7 @@
     </main>
 
   </div>
-  <footer>
+<footer>
     <div class="foot-inner">
       <img class="foot-logo" src="./logo-cropped.png" alt="MMOS" width="102" height="34">
       <div class="foot-links">
@@ -398,7 +335,7 @@
       <div class="copy">© 2026 MMOS • Assistenza Privata</div>
     </div>
   </footer>
-  <button class="chat-fab" id="chatFab" type="button" aria-label="Apri assistente" aria-expanded="false" title="Assistente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.18.25.43.25.68l.05 1.69c0 .51.55.85 1.03.6l1.99-.95c.17-.08.36-.12.55-.12H12c5.64 0 10-4.13 10-9.7S17.64 2 12 2zm-5.5 8.5A1.5 1.5 0 1 1 8 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 12 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 16 9a1.5 1.5 0 0 1-1.5 1.5z" fill="currentColor"/></svg></button>
+<button class="chat-fab" id="chatFab" type="button" aria-label="Apri assistente" aria-expanded="false" title="Assistente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.18.25.43.25.68l.05 1.69c0 .51.55.85 1.03.6l1.99-.95c.17-.08.36-.12.55-.12H12c5.64 0 10-4.13 10-9.7S17.64 2 12 2zm-5.5 8.5A1.5 1.5 0 1 1 8 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 12 9a1.5 1.5 0 0 1-1.5 1.5zm4 0A1.5 1.5 0 1 1 16 9a1.5 1.5 0 0 1-1.5 1.5z" fill="currentColor"/></svg></button>
   <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistente MMOS">
     <div class="chat-head"><span class="on"></span><img src="./logo-cropped.png" alt="MMOS" width="60" height="20"><span>mmos assistant</span><button class="chat-x" id="chatClose" type="button">chiudi</button></div>
     <div class="chat-log" id="chatLog"></div>
