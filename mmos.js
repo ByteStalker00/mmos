@@ -152,21 +152,21 @@
         { k: ['dove', 'zona', 'zone', 'san benedetto', 'porto', 'ascoli', 'domicilio', 'raggiung', 'venite', 'sede'],
           a: 'Opero in studio e a domicilio solo a <b>Porto d\u2019Ascoli e San Benedetto del Tronto</b>. Da remoto ovunque, ma solo ottimizzazione e debug.' },
         { k: ['prezzo', 'prezzi', 'costo', 'costi', 'tariff', 'quanto', 'pagare', 'listino'],
-          a: 'Installazione SO €48 · Ripristino, primo avvio, programmi, pulizia €34 · Virus €41 · Backup/trasferimento da €34 · Online €21/h · Uscita €21 · Privati €21/h · Aziende €28/h. Dettagli in <a href="listino.html">Listino</a>.' },
+          a: 'Installazione SO €43 · Ripristino, primo avvio, programmi, pulizia €31 · Virus €37 · Backup/trasferimento da €31 · Online €19/h · Uscita €19 · Privati €19/h · Aziende €25/h. Dettagli in <a href="listino.html">Listino</a>.' },
         { k: ['build', 'assembl', 'computer nuovo', 'pc nuovo', 'pc gaming', 'gaming', 'configura'],
           a: 'Build 1080p, 2K, 4K e top di gamma RTX 5090 in <a href="build.html">Build</a>. Da privato non vendo pezzi: ti dico cosa comprare, tu acquisti, io assemblo e testo.' },
         { k: ['remoto', 'distanza', 'online', 'teamviewer', 'da casa'],
-          a: 'Da remoto faccio solo <b>ottimizzazione e debug software</b> (€21/h): pulizia, avvio, errori e rallentamenti. Niente formattazioni a distanza.' },
+          a: 'Da remoto faccio solo <b>ottimizzazione e debug software</b> (€19/h): pulizia, avvio, errori e rallentamenti. Niente formattazioni a distanza.' },
         { k: ['virus', 'malware', 'sicurezza', 'hacker', 'popup', 'antivirus'],
-          a: 'Rimozione virus €41 con analisi e protezione. Consigli base in <a href="guide.html">Guide</a>: aggiornamenti, allegati sospetti, password diverse.' },
+          a: 'Rimozione virus €37 con analisi e protezione. Consigli base in <a href="guide.html">Guide</a>: aggiornamenti, allegati sospetti, password diverse.' },
         { k: ['lento', 'lentezza', 'avvio', 'veloc', 'ssd', 'impiega'],
-          a: 'Pulizia e ottimizzazione avvio €34. Se il disco è meccanico, un SSD cambia più di qualsiasi pulizia: chiedimi un preventivo.' },
+          a: 'Pulizia e ottimizzazione avvio €31. Se il disco è meccanico, un SSD cambia più di qualsiasi pulizia: chiedimi un preventivo.' },
         { k: ['backup', 'dati', 'foto', 'documenti', 'persi', 'recuper'],
-          a: 'Backup da €34 con copia su disco esterno (verificata). Mai formattare senza backup: lo facciamo insieme prima.' },
+          a: 'Backup da €31 con copia su disco esterno (verificata). Mai formattare senza backup: lo facciamo insieme prima.' },
         { k: ['formatta', 'formattazione', 'installazione', 'windows', 'sistema operativo', 'so ', 'ripristino', 'reinstalla'],
-          a: 'Installazione pulita €48 (driver + aggiornamenti + base), ripristino €34. Sempre con backup verificato prima.' },
+          a: 'Installazione pulita €43 (driver + aggiornamenti + base), ripristino €31. Sempre con backup verificato prima.' },
         { k: ['programmi', 'installare', 'software', 'office', 'primo avvio', 'nuovo pc'],
-          a: 'Primo avvio e installazione programmi €34 con test finale.' },
+          a: 'Primo avvio e installazione programmi €31 con test finale.' },
         { k: ['usato', 'seconda mano', 'ricondizionat'],
           a: 'La sezione <a href="usato.html">Usato</a> arriva a breve: pezzi testati, con noi come tramite col venditore.' },
         { k: ['whatsapp'],
@@ -214,7 +214,7 @@
         log.appendChild(d);
         log.scrollTop = log.scrollHeight;
       }
-      var AI_CTX = 'Sei l\u2019assistente di MMOS \u2022 Assistenza Privata a Porto d\u2019Ascoli e San Benedetto del Tronto. Prezzi: installazione SO 48\u20ac; ripristino, primo avvio, programmi, pulizia 34\u20ac; rimozione virus 41\u20ac; backup/trasferimento da 34\u20ac; assistenza online 21\u20ac/h; uscita in zona 21\u20ac; privati 21\u20ac/h; aziende 28\u20ac/h. Studio e domicilio solo in zona; da remoto solo ottimizzazione e debug software, mai formattazioni a distanza. Rispondi in italiano, massimo 60 parole, tono cordiale. Per preventivi personalizzati invita a scrivere su WhatsApp al 375 523 6202.';
+      var AI_CTX = 'Sei l\u2019assistente di MMOS \u2022 Assistenza Privata a Porto d\u2019Ascoli e San Benedetto del Tronto. Prezzi (sconto zona -10% già applicato): installazione SO 43\u20ac; ripristino, primo avvio, programmi, pulizia 31\u20ac; rimozione virus 37\u20ac; backup/trasferimento da 31\u20ac; assistenza online 19\u20ac/h; uscita in zona 19\u20ac; privati 19\u20ac/h; aziende 25\u20ac/h. Studio e domicilio solo in zona; da remoto solo ottimizzazione e debug software, mai formattazioni a distanza. Rispondi in italiano, massimo 60 parole, tono cordiale. Per preventivi personalizzati invita a scrivere su WhatsApp al 375 523 6202.';
       function askAI(q, done) {
         var ctrl = null;
         try { ctrl = new AbortController(); } catch (e) {}

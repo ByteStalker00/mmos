@@ -16,7 +16,7 @@ ottimizzazione e debug da remoto ovunque.
 
 - **In studio** — formattazione completa: backup dati, reinstallazione pulita, driver e programmi
 - **A domicilio** — solo Porto d'Ascoli e San Benedetto del Tronto
-- **Da remoto** — unicamente ottimizzazione e debug software (€ 21/h)
+- **Da remoto** — unicamente ottimizzazione e debug software (€ 19/h)
 - **Build su misura** — da privato non vendo componenti: consiglio cosa acquistare,
   tu compri, io assemblo con OS, driver, ottimizzazione e test finali
 - **Usato garantito** (in arrivo) — contatti MMOS, noi gestiamo tutto col venditore
@@ -26,13 +26,13 @@ ottimizzazione e debug da remoto ovunque.
 
 | Servizio | Prezzo |
 |---|---|
-| Installazione SO (pulita + driver + base) | € 48 |
-| Ripristino SO, primo avvio, programmi, pulizia PC | € 34 |
-| Rimozione virus (analisi + protezione) | € 41 |
-| Backup / trasferimento | da € 34 |
-| Assistenza online | € 21/h |
-| Uscita in zona | € 21 |
-| Privati / Aziende | € 21/h / € 28/h |
+| Installazione SO (pulita + driver + base) | € 43 |
+| Ripristino SO, primo avvio, programmi, pulizia PC | € 31 |
+| Rimozione virus (analisi + protezione) | € 37 |
+| Backup / trasferimento | da € 31 |
+| Assistenza online | € 19/h |
+| Uscita in zona | € 19 |
+| Privati / Aziende | € 19/h / € 25/h |
 
 ## Contatti
 
