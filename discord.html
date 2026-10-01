@@ -140,8 +140,10 @@
     @media(min-width:640px){ .grid.cols3{ grid-template-columns:1fr 1fr 1fr; }
       .grid.cols2{ grid-template-columns:1fr 1fr; } }
     .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 16px;
-      transition:transform .15s ease, border-color .15s ease; }
-    .tile:hover { border-color:#57503f; }
+      transition:border-color .15s ease, box-shadow .25s ease; }
+    .tile:hover { border-color:rgba(88,101,242,.6); box-shadow:0 10px 30px rgba(88,101,242,.18); }
+    .tile.win:hover { border-color:rgba(24,119,242,.65); box-shadow:0 10px 30px rgba(24,119,242,.2); }
+    .tile.mob:hover { border-color:rgba(29,185,84,.6); box-shadow:0 10px 30px rgba(29,185,84,.18); }
     .tile .n { font-family:var(--mono); font-size:12px; color:var(--muted); }
     .tile .mk { display:inline-block; width:9px; height:9px; border-radius:2px;
       background:var(--body); flex:0 0 auto; }
@@ -274,7 +276,7 @@
     @media(min-width:800px){ .split { grid-template-columns:1.15fr .85fr; align-items:start; } .split .discord-wrap { position:sticky; top:70px; } }
     .steps { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
     .steps li { display:flex; gap:13px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; transition:transform .15s ease, border-color .15s ease; }
-    .steps li:hover { border-color:#5865f2; }
+    .steps li:hover { border-color:#5865f2; box-shadow:0 10px 28px rgba(88,101,242,.2); }
     .steps li .step-n { flex:0 0 auto; margin:0; }
     .steps li b { display:block; margin:3px 0 4px; font-size:15.5px; color:var(--ink); }
     .steps li p { margin:0; font-size:14px; color:var(--body); line-height:1.65; }
@@ -344,7 +346,7 @@
       <div class="split">
       <ol class="steps">
         <li><span class="step-n">1</span><div><b>Installa su PC Windows</b><p>Scarica l’app da <a href="https://discord.com/download" target="_blank" rel="noopener">discord.com/download</a>, avvia il file e crea un account o accedi: in due minuti sei dentro.</p><div class="store-row"><a class="store-badge" href="https://discord.com/download" target="_blank" rel="noopener" title="Scarica Discord per Windows"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.6l8-1.1v7H3zM12 4.3L21 3v8.5h-9zM3 12.6h8v7l-8-1.1zM12 12.6h9V21l-9-1.2z"/></svg><span class="t"><small>Scarica per</small><b>Windows</b></span></a></div></div></li>
-        <li><span class="step-n">2</span><div><b>Installa su Android e iPhone</b><p>Apri lo store del telefono, cerca <b>Discord</b> e installa: usa lo stesso account del PC per ritrovare server e chat.</p><div class="store-row"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.discord" target="_blank" rel="noopener" title="Discord su Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D2FF" d="M5 3.9v16.2c0 .5.6.8 1 .5l13.2-8.1c.4-.2.4-.8 0-1L6 3.4c-.4-.3-1 0-1 .5z"/><path fill="#FFCE00" d="M5 3.9v2.5l9.6 5.6L5 17.6v2.5l14.2-8.1z" opacity=".55"/></svg><span class="t"><small>Disponibile su</small><b>Google Play</b></span></a><a class="store-badge" href="https://apps.apple.com/us/app/discord-chat-for-games/id985746746" target="_blank" rel="noopener" title="Discord su App Store"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 5h3" stroke-linecap="round"/></svg><span class="t"><small>Scarica su</small><b>App Store</b></span></a></div></div></li>
+        <li><span class="step-n">2</span><div><b>Installa su Android e iPhone</b><p>Apri lo store del telefono, cerca <b>Discord</b> e installa: usa lo stesso account del PC per ritrovare server e chat.</p><div class="store-row"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.discord" target="_blank" rel="noopener" title="Discord su Google Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="t"><small>Disponibile su</small><b>Google Play</b></span></a><a class="store-badge" href="https://apps.apple.com/us/app/discord-chat-for-games/id985746746" target="_blank" rel="noopener" title="Discord su App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="t"><small>Scarica su</small><b>App Store</b></span></a></div></div></li>
         <li><span class="step-n">3</span><div><b>Entra nel server MMOS</b><p>Apri <a href="https://discord.gg/v6fb4zrPfK" target="_blank" rel="noopener">l’invito MMOS</a>, premi “Accetta l’invito” e presentati: ti rispondiamo per assistenza, domande e aggiornamenti.</p></div></li>
       </ol>
       <div class="discord-wrap">
