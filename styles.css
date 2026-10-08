@@ -505,6 +505,13 @@ html, body {
 .chat-panel {
   left:8px; right:8px; bottom:68px; width:auto; max-height:70vh;
 }
+/* schede build: su schermi stretti l'etichetta va sopra il testo, evita righe di 6 righe */
+.tile .spec li {
+  flex-direction:column; gap:2px;
+}
+.tile .spec b {
+  flex:none; padding-top:0;
+}
 }
 
 .music-tab {
