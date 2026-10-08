@@ -117,7 +117,7 @@ h1 .m2 {
   display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;
 }
 .nav-links {
-  display:none; gap:6px;
+  display:none; gap:6px; margin-right:auto;
 }
 .nav-links a {
   font-family:var(--mono); font-size:10px; color:var(--muted); text-decoration:none;
