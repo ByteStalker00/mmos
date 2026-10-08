@@ -16,7 +16,7 @@ ottimizzazione e debug da remoto ovunque.
 
 - **In studio** — formattazione completa: backup dati, reinstallazione pulita, driver e programmi
 - **A domicilio** — solo Porto d'Ascoli e San Benedetto del Tronto
-- **Da remoto** — unicamente ottimizzazione e debug software (€ 19/h)
+- **Da remoto** — unicamente ottimizzazione e debug software (€ 20/h)
 - **Build su misura** — da privato non vendo componenti: consiglio cosa acquistare,
   tu compri, io assemblo con OS, driver, ottimizzazione e test finali
 - **Usato garantito** (in arrivo) — contatti MMOS, noi gestiamo tutto col venditore
@@ -26,13 +26,13 @@ ottimizzazione e debug da remoto ovunque.
 
 | Servizio | Prezzo |
 |---|---|
-| Installazione SO (pulita + driver + base) | € 43 |
-| Ripristino SO, primo avvio, programmi, pulizia PC | € 31 |
-| Rimozione virus (analisi + protezione) | € 37 |
-| Backup / trasferimento | da € 31 |
-| Assistenza online | € 19/h |
-| Uscita in zona | € 19 |
-| Privati / Aziende | € 19/h / € 25/h |
+| Installazione SO (pulita + driver + base) | € 45 |
+| Ripristino SO, primo avvio, programmi, pulizia PC | € 30 |
+| Rimozione virus (analisi + protezione) | € 35 |
+| Backup / trasferimento | da € 30 |
+| Assistenza online | € 20/h |
+| Uscita in zona | € 20 |
+| Privati / Aziende | € 20/h / € 25/h |
 
 ## Contatti
 
@@ -66,7 +66,7 @@ Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere c
 | `index.html` | Home: hero, servizi, portfolio, FAQ |
 | `guide.html` / `build.html` / `listino.html` / `usato.html` / `bio.html` / `sponsor.html` / `discord.html` | Pagine dedicate (stesso head/nav/footer) |
 | `styles.css` | Stylesheet unico di tutte le 8 pagine (estratto dai vecchi blocchi `<style>` inline) |
-| `mmos.js` | Tema, particelle, drawer Spotify, chat + IA (`?v=12` anti-cache) |
+| `mmos.js` | Tema, particelle, drawer Spotify, chat + IA (`?v=13` anti-cache) |
 | `logo-cropped.png` | Logo in navbar, chat e footer |
 | `brands/` | Loghi marchi consigliati (pagina Build) |
 | `og-cover.jpg` | Immagine anteprima condivisioni 1200×630 |

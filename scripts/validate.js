@@ -18,7 +18,7 @@ for (const p of pages) {
   if (!/<link rel="stylesheet" href="\.\/styles\.css\?v=\d+">/.test(html)) err('manca il link a ./styles.css?v=N');
   if (!/<script src="\.\/mmos\.js\?v=\d+" defer><\/script>/.test(html)) err('manca lo script ./mmos.js?v=N');
   if (/<style[\s>]/.test(html)) err('blocco <style> inline residuo');
-  if (/mmos\.js\?v=(?!12\b)/.test(html)) err('versione script diversa da ?v=12');
+  if (/mmos\.js\?v=(?!13\b)/.test(html)) err('versione script diversa da ?v=13');
 
   // meta base
   if (!/<html lang="it"/.test(html)) err('manca <html lang="it">');
