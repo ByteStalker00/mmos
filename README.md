@@ -43,18 +43,18 @@ ottimizzazione e debug da remoto ovunque.
 
 ## Contenuti del sito
 
-Hero con zone cliccabili (Maps) e terminale · Servizi · Portfolio · Guide e consigli ·
+Hero con zone cliccabili (Maps) e terminale · Servizi · Portfolio · Biografia · Guide e consigli ·
 Build AMD + ASUS/MSI verificate (1080p, 2K, 4K, top RTX 5090) · Listino · Usato ·
-FAQ · Assistente virtuale con handoff WhatsApp e fallback IA gratis · Playlist Spotify · Doppio tema
-chiaro/scuro · Particelle animate · CSP rigida.
+FAQ · Server Discord con guida d'uso · Sponsor · Assistente virtuale con handoff WhatsApp
+e fallback IA gratis · Playlist Spotify · Doppio tema chiaro/scuro · Particelle animate · CSP rigida.
 
 ## Anteprima link (Open Graph)
 
 | Meta | Valore |
 |---|---|
-| `og:site_name` | Official website |
-| `og:title` | MMOS • Assistenza Privata |
-| `og:description` | Bio completa |
+| `og:site_name` | MMOS • Assistenza Privata |
+| `og:title` | Titolo della pagina (es. MMOS • Assistenza Privata) |
+| `og:description` | Descrizione della pagina |
 | `og:image` | `og-cover.jpg` 1200×630 |
 
 Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere con `?v=N` in coda.
@@ -63,13 +63,15 @@ Le app memorizzano l'anteprima per URL — per forzarne una nuova, condividere c
 
 | File | Uso |
 |---|---|
-| `index.html` | Home: hero, servizi, portfolio, FAQ, Discord (HTML + CSS inline) |
-| `guide.html` / `build.html` / `listino.html` / `usato.html` / `bio.html` / `sponsor.html` | Pagine dedicate (stesso head/CSS/nav/footer) |
-| `mmos.js` | Tema, particelle, drawer Spotify, chat + IA, anti-tasto-destro (`?v=8` anti-cache) |
+| `index.html` | Home: hero, servizi, portfolio, FAQ |
+| `guide.html` / `build.html` / `listino.html` / `usato.html` / `bio.html` / `sponsor.html` / `discord.html` | Pagine dedicate (stesso head/nav/footer) |
+| `styles.css` | Stylesheet unico di tutte le 8 pagine (estratto dai vecchi blocchi `<style>` inline) |
+| `mmos.js` | Tema, particelle, drawer Spotify, chat + IA (`?v=12` anti-cache) |
 | `logo-cropped.png` | Logo in navbar, chat e footer |
 | `brands/` | Loghi marchi consigliati (pagina Build) |
 | `og-cover.jpg` | Immagine anteprima condivisioni 1200×630 |
 | `favicon.ico` / `favicon-180.png` | Icone browser e Apple |
+| `.github/workflows/validate.yml` | CI: sintassi JS e coerenza link su ogni push |
 
 ## Sviluppo
 
@@ -77,12 +79,13 @@ Nessuna build: modificare, validare e pushare su `main`.
 
 ```powershell
 node --check mmos.js
-git add index.html mmos.js guide.html build.html listino.html usato.html bio.html sponsor.html
+git add *.html styles.css mmos.js README.md
 git commit -m "Descrizione"
 git push origin main
 ```
 
 Deploy GitHub Pages (branch `main`, root) in 1–2 minuti.
-Per forzare il ricaricamento del JS, incrementare `?v=N` nel tag script.
+Per forzare il ricaricamento di JS e CSS, incrementare `?v=N` nei tag
+`<script>` e `<link rel="stylesheet">` di tutte le pagine.
 
 © 2026 MMOS • Assistenza Privata
